@@ -4,10 +4,10 @@
 baseurl:
 url: https://mazhuang.org
 date_format: "ordinal"
-title: 码志
-subtitle: "公众号：闷骚的程序员"
-description: "马壮的个人博客，公众号：闷骚的程序员"
-keywords: 码志, Zhuang Ma, mzlogin, mazhuang, 闷骚的程序员
+title: 董小姐的草原
+subtitle: "时光未老 一路相随"
+description: "董拐拐很拐就是拐拐拐"
+keywords: 董小姐, 董拐拐
 timezone: Asia/Shanghai
 encoding: "utf-8"
 side_bar_repo_limit: 5
