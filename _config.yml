@@ -2,7 +2,7 @@
 #   Main Configs   #
 # ---------------- #
 baseurl:
-url: https://mazhuang.org
+url: https://canDy961.github.io
 date_format: "ordinal"
 title: 董小姐的草原
 subtitle: "时光未老 一路相随"
@@ -11,7 +11,7 @@ keywords: 董小姐, 董拐拐
 timezone: Asia/Shanghai
 encoding: "utf-8"
 side_bar_repo_limit: 5
-repository: mzlogin/mzlogin.github.io
+repository: canDy961/canDy961.github.io
 # 对 css 和 js 资源的 cdn 加速配置
 cdn:
     jsdelivr:
