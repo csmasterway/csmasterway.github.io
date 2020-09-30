@@ -121,14 +121,14 @@ disqus:
 # https://imsun.net/posts/gitment-introduction/
 gitment:
     owner: canDy961
-    repo: blog-comments
+    repo: canDy961.github.io
     oauth:
         client_id: 784b07e885ab3cb4131e
         client_secret: ae089a5d678c0686432d2274806874d19b9f921f
 # https://github.com/gitalk/gitalk#install
 gitalk:
     owner: canDy961
-    repo: blog-comments
+    repo: canDy961.github.io
     clientID: 784b07e885ab3cb4131e
     clientSecret: ae089a5d678c0686432d2274806874d19b9f921f
 # 在使用其它评论组件时可点击显示 Disqus
