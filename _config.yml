@@ -38,10 +38,10 @@ highlight_theme: github
 # ---------------- #
 #      Author      #
 # ---------------- #
-author: Miss Dong
+author: canDy961
 organization: 
 organization_url: 
-github_username: Miss Dong
+github_username: canDy961
 location: Wuhan, China
 email: chumpma@gmail.com
 
@@ -120,14 +120,14 @@ disqus:
     username: 
 # https://imsun.net/posts/gitment-introduction/
 gitment:
-    owner: Miss Don
+    owner: canDy961
     repo: blog-comments
     oauth:
         client_id: d2e1cbbd298958076462
         client_secret: b42a4178e5fd4a7cf63189ef4b1453b05c375709
 # https://github.com/gitalk/gitalk#install
 gitalk:
-    owner: Miss Don
+    owner: canDy961
     repo: blog-comments
     clientID: d2e1cbbd298958076462
     clientSecret: b42a4178e5fd4a7cf63189ef4b1453b05c375709
