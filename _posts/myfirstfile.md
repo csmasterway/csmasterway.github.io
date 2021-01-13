@@ -21,4 +21,4 @@ keywords: git
 ##### 3、下载TortoiseGit 和中文语言包
 ###### 下载地址：https://download.tortoisegit.org/tgit/1.8.16.0/
 ##### 4、安装TortoiseGit，截图如下：
-###### ![](/images/blog/Tortoise.png)
+###### ![](/images/blog/Tortoise1.png)
