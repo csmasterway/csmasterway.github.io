@@ -1,8 +1,8 @@
 ---
 layout: page
 title: About
-description: 董拐拐呀
-keywords: 董小姐
+description:
+keywords:
 comments: true
 menu: 关于
 permalink: /about/
