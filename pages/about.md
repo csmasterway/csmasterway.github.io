@@ -15,11 +15,11 @@ permalink: /about/
 <ul>
 {% for website in site.data.social %}
 <li>{{website.sitename }}：<a href="{{ website.url }}" target="_blank">@{{ website.name }}</a></li>
-{% endfor %}
-{% if site.url contains 'mazhuang.org' %}
 <li>
 Email:    wendaocs@hotmail.com
 </li>
+{% endfor %}
+{% if site.url contains 'mazhuang.org' %}
 {% endif %}
 </ul>
 
