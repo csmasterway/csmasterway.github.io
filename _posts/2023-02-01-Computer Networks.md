@@ -108,23 +108,23 @@ LCP：身份验证，通过之后由NCP协商网络地址
 
 **CSMA/CA**
 
-![image-20230118165107382](C:\Users\Admin\AppData\Roaming\Typora\typora-user-images\image-20230118165107382.png)
+![image-20230118165107382](..\images\blog\image-20230118165107382.png)
 
-![image-20230118181615039](C:\Users\Admin\AppData\Roaming\Typora\typora-user-images\image-20230118181615039.png)
+![image-20230118181615039](..\images\blog\image-20230118181615039.png)
 
-![image-20230118181835850](C:\Users\Admin\AppData\Roaming\Typora\typora-user-images\image-20230118181835850.png)
+![image-20230118181835850](..\images\blog\image-20230118181835850.png)
 
-![image-20230118182234960](C:\Users\Admin\AppData\Roaming\Typora\typora-user-images\image-20230118182234960.png)
+![image-20230118182234960](..\images\blog\image-20230118182234960.png)
 
-![image-20230118182937569](C:\Users\Admin\AppData\Roaming\Typora\typora-user-images\image-20230118182937569.png)
+![image-20230118182937569](..\images\blog\image-20230118182937569.png)
 
-![image-20230118182848610](C:\Users\Admin\AppData\Roaming\Typora\typora-user-images\image-20230118182848610.png)
+![image-20230118182848610](..\images\blog\image-20230118182848610.png)
 
-![image-20230118183542714](C:\Users\Admin\AppData\Roaming\Typora\typora-user-images\image-20230118183542714.png)
+![image-20230118183542714](..\images\blog\image-20230118183542714.png)
 
-![image-20230118183719520](C:\Users\Admin\AppData\Roaming\Typora\typora-user-images\image-20230118183719520.png)
+![image-20230118183719520](..\images\blog\image-20230118183719520.png)
 
-![image-20230118184226201](C:\Users\Admin\AppData\Roaming\Typora\typora-user-images\image-20230118184226201.png)
+![image-20230118184226201](..\images\blog\image-20230118184226201.png)
 
 **CSMA/CD  载波监听多点接入/碰撞检测**
 
@@ -197,9 +197,9 @@ $t,T_0$分别为传输时间和发送时间
 
 **生成树（STP）解决网络环路（广播风暴）：**Spanning Tree Protocol
 
-在增加冗余链路提高网络可靠性的同时避免网络环路![image-20221230093236961](C:\Users\Admin\AppData\Roaming\Typora\typora-user-images\image-20221230093236961.png)
+在增加冗余链路提高网络可靠性的同时避免网络环路![image-20221230093236961](..\images\blog\image-20221230093236961.png)
 
-![image-20221230093258966](C:\Users\Admin\AppData\Roaming\Typora\typora-user-images\image-20221230093258966.png)==广播风暴后果：消耗网络资源，使得网络无法正常通讯；主机要收到重复的帧消耗主机资源；交换机的帧交换表在错误记录里震荡==
+![image-20221230093258966](..\images\blog\image-20221230093258966.png)==广播风暴后果：消耗网络资源，使得网络无法正常通讯；主机要收到重复的帧消耗主机资源；交换机的帧交换表在错误记录里震荡==
 
 1.选一个交换机作为根交换机，网桥ID最小，取值越小优先级越高默认0-61440，步长4096，默认32768，网桥ID由两部分组成，包括优先级和MAC地址
 
@@ -227,11 +227,11 @@ $t,T_0$分别为传输时间和发送时间
 
 
 
-![image-20221230095219746](C:\Users\Admin\AppData\Roaming\Typora\typora-user-images\image-20221230095219746.png)
+![image-20221230095219746](..\images\blog\image-20221230095219746.png)
 
-![image-20221230095830840](C:\Users\Admin\AppData\Roaming\Typora\typora-user-images\image-20221230095830840.png)
+![image-20221230095830840](..\images\blog\image-20221230095830840.png)
 
-![image-20221230095928679](C:\Users\Admin\AppData\Roaming\Typora\typora-user-images\image-20221230095928679.png)
+![image-20221230095928679](..\images\blog\image-20221230095928679.png)
 
 **交换机可以绑定接入到指定端口的物理机MAC地址，从而实现网络接入安全**
 
@@ -241,11 +241,11 @@ $t,T_0$分别为传输时间和发送时间
 
 网络层向运输层提供的服务：虚电路、数据报（现在）
 
-![image-20230101082407822](C:\Users\Admin\AppData\Roaming\Typora\typora-user-images\image-20230101082407822.png)
+![image-20230101082407822](..\images\blog\image-20230101082407822.png)
 
 IP、ARP、ICMP，IGMP
 
-![image-20230101083619483](C:\Users\Admin\AppData\Roaming\Typora\typora-user-images\image-20230101083619483.png)
+![image-20230101083619483](..\images\blog\image-20230101083619483.png)
 
 ### IP地址
 
@@ -253,9 +253,9 @@ IP、ARP、ICMP，IGMP
 | ------------------ | ------------ |
 | 网络ID192.168.1    | 主机地址：20 |
 
-![image-20230101084402149](C:\Users\Admin\AppData\Roaming\Typora\typora-user-images\image-20230101084402149.png)
+![image-20230101084402149](..\images\blog\image-20230101084402149.png)
 
-![image-20230101084953724](C:\Users\Admin\AppData\Roaming\Typora\typora-user-images\image-20230101084953724.png)
+![image-20230101084953724](..\images\blog\image-20230101084953724.png)
 
 | A     | B       | C       | D       |
 | ----- | ------- | ------- | ------- |
@@ -285,14 +285,14 @@ IP、ARP、ICMP，IGMP
 
 **子网划分**
 
-![image-20230101093114606](C:\Users\Admin\AppData\Roaming\Typora\typora-user-images\image-20230101093114606.png)
+![image-20230101093114606](..\images\blog\image-20230101093114606.png)
 
 + 写出子网地址范围
 + 确定子网掩码
 + 网关一般是第一个地址
-+ ![image-20230101094244538](C:\Users\Admin\AppData\Roaming\Typora\typora-user-images\image-20230101094244538.png)
++ ![image-20230101094244538](..\images\blog\image-20230101094244538.png)
 
-![image-20230101094352651](C:\Users\Admin\AppData\Roaming\Typora\typora-user-images\image-20230101094352651.png)
+![image-20230101094352651](..\images\blog\image-20230101094352651.png)
 
 计算机的网关就是默认路由，一台计算机有多个网卡， 如果设置多个网关回由于负载均衡导致丢包 
 
@@ -326,7 +326,7 @@ TCP：面向连接，三次握手，全双工通信，面向字节流
 
 ## VLAN
 
-![image-20230121100454500](C:\Users\Admin\AppData\Roaming\Typora\typora-user-images\image-20230121100454500.png)
+![image-20230121100454500](..\images\blog\image-20230121100454500.png)
 
 
 
@@ -352,11 +352,11 @@ TCP：面向连接，三次握手，全双工通信，面向字节流
 
 综上，互联的Trunk端口的PVID值不相等，可能造成错误转发
 
-![image-20230121103023368](C:\Users\Admin\AppData\Roaming\Typora\typora-user-images\image-20230121103023368.png)
+![image-20230121103023368](..\images\blog\image-20230121103023368.png)
 
-![image-20230121103221739](C:\Users\Admin\AppData\Roaming\Typora\typora-user-images\image-20230121103221739.png)
+![image-20230121103221739](..\images\blog\image-20230121103221739.png)
 
-![image-20230121131718874](C:\Users\Admin\AppData\Roaming\Typora\typora-user-images\image-20230121131718874.png)
+![image-20230121131718874](..\images\blog\image-20230121131718874.png)
 
 192.168.252.0     
 
@@ -373,9 +373,9 @@ TCP：面向连接，三次握手，全双工通信，面向字节流
 
  RIP距离16表示目标网络不可达
 
-![image-20230121155045707](C:\Users\Admin\AppData\Roaming\Typora\typora-user-images\image-20230121155045707.png)
+![image-20230121155045707](..\images\blog\image-20230121155045707.png)
 
- 假设在N1出现故障后R2的报文先到达![image-20230121155207892](C:\Users\Admin\AppData\Roaming\Typora\typora-user-images\image-20230121155207892.png)
+ 假设在N1出现故障后R2的报文先到达![image-20230121155207892](..\images\blog\image-20230121155207892.png)
 
 距离向量算法不能避免网络环路
 
@@ -385,7 +385,7 @@ OSPF   依赖于IP  考研中属于网络层
 
 BGP  依赖于TCP
 
-![image-20230121162814542](C:\Users\Admin\AppData\Roaming\Typora\typora-user-images\image-20230121162814542.png)
+![image-20230121162814542](..\images\blog\image-20230121162814542.png)
 
 IPV4首部长度以4B为单位，片偏移以8B为单位，必须为整数
 
@@ -397,13 +397,13 @@ IPV4首部长度以4B为单位，片偏移以8B为单位，必须为整数
 
 MF：1标识本分片后面还有分片0表示本分片是最后一个分片
 
-![image-20230121195604090](C:\Users\Admin\AppData\Roaming\Typora\typora-user-images\image-20230121195604090.png)
+![image-20230121195604090](..\images\blog\image-20230121195604090.png)
 
- ![image-20230121230628063](C:\Users\Admin\AppData\Roaming\Typora\typora-user-images\image-20230121230628063.png)
+ ![image-20230121230628063](..\images\blog\image-20230121230628063.png)
 
   
 
-![image-20230121233314455](C:\Users\Admin\AppData\Roaming\Typora\typora-user-images\image-20230121233314455.png)
+![image-20230121233314455](..\images\blog\image-20230121233314455.png)
 
 SYN为1的报文不携带数据
 
@@ -428,7 +428,7 @@ IMAP: 143  POP3:110
 
 SMTP:只支持ASCII码  MIME ---->ASCII
 
-![image-20230123095842045](C:\Users\Admin\AppData\Roaming\Typora\typora-user-images\image-20230123095842045.png)
+![image-20230123095842045](..\images\blog\image-20230123095842045.png)
 
  The network  order is consistent with big endian order.
 
