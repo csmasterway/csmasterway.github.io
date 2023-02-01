@@ -2,7 +2,7 @@
 #   Main Configs   #
 # ---------------- #
 baseurl:
-url: https://canDy961.github.io
+url: https://csmasterway.github.io
 date_format: "ordinal"
 title: 董小姐的草原
 subtitle: "时光未老 一路相随"
@@ -11,7 +11,7 @@ keywords: 董小姐, 董拐拐
 timezone: Asia/Shanghai
 encoding: "utf-8"
 side_bar_repo_limit: 5
-repository: canDy961/canDy961.github.io
+repository: csmasterway/csmasterway.github.io
 # 对 css 和 js 资源的 cdn 加速配置
 cdn:
     jsdelivr:
@@ -38,10 +38,10 @@ highlight_theme: github
 # ---------------- #
 #      Author      #
 # ---------------- #
-author: canDy961
+author: csmasterway
 organization: 
 organization_url: 
-github_username: canDy961
+github_username: csmasterway
 location: Wuhan, China
 email: chumpma@gmail.com
 
@@ -120,15 +120,15 @@ disqus:
     username: 
 # https://imsun.net/posts/gitment-introduction/
 gitment:
-    owner: canDy961
-    repo: canDy961.github.io
+    owner: csmasterway
+    repo: csmasterway.github.io
     oauth:
         client_id: 784b07e885ab3cb4131e
         client_secret: ae089a5d678c0686432d2274806874d19b9f921f
 # https://github.com/gitalk/gitalk#install
 gitalk:
-    owner: canDy961
-    repo: canDy961.github.io
+    owner: csmasterway
+    repo: csmasterway.github.io
     clientID: 784b07e885ab3cb4131e
     clientSecret: ae089a5d678c0686432d2274806874d19b9f921f
 # 在使用其它评论组件时可点击显示 Disqus
