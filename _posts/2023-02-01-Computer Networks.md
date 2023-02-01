@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 计算机网络杂记
-categories: Blog
+categories: [Blog, CRC, HTTP, TCP/IP, VLAN, THree-way handshake, waves four times]
 description: 学习计网的一些笔记
 keywords: CRC, HTTP, TCP/IP, VLAN, THree-way handshake, waves four times
 ---
