@@ -35,7 +35,7 @@ systemctl enable nginx
 5.打开浏览器访问ip地址，出现welcome nginx说明安装成功
 ```
 
-<img src="https://wendaocsmaster.github.io/images/blogimage-20230124152502482.png" alt="img" style="zoom:80%;" />
+<img src="https://wendaocsmaster.github.io/images/blog/image-20230124152502482.png" alt="img" style="zoom:80%;" />
 
 
 
@@ -201,7 +201,7 @@ echo "<?php phpinfo(); ?>" >> /usr/share/nginx/html/index.php
 访问ip地址出现如下结果说明配置成功
 ```
 
-<img src="https://wendaocsmaster.github.io/images/blog2.png" alt="img" style="zoom:75%;" />
+<img src="https://wendaocsmaster.github.io/images/blog/2.png" alt="img" style="zoom:75%;" />
 
 ## 3.配置数据库
 
