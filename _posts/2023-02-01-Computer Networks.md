@@ -436,3 +436,8 @@ SMTP:只支持ASCII码  MIME ---->ASCII
 
  The network  order is consistent with big endian order.
 
+参考链接：
+
++ [韩立刚计算机网络](https://www.bilibili.com/video/BV1Qr4y1N7cH/?spm_id_from=333.337.search-card.all.click&vd_source=de4eb17f4c05b07e2288f16c09f1f513)
+
++ [湖科大教书匠计算机网络](https://space.bilibili.com/360996402/?spm_id_from=333.999.0.0)
