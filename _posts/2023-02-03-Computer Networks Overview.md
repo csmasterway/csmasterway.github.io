@@ -89,11 +89,11 @@ keywords: computer networks overview
 
 1. 网络体系结构：
 
-   ![image-20230204085532156](https://wendaocsmaster.github.io/images/blogblog\image-20230204085532156.png)
+   ![image-20230204085532156](https://wendaocsmaster.github.io/images/blog/image-20230204085532156.png)
 
    | OSI                                                          | TCP/IP                                                       |
    | ------------------------------------------------------------ | ------------------------------------------------------------ |
-   | 1.专家没有市场经验，完成标准没有商业驱动<br />力；<br />2.协议实现过分复杂，运行效率低；<br />3. 标准的指定周期太长，无法及时进入市场；<br/>4. 层次划分不太合理，某些功能在多个层次<br />中重复出现，例如流量控制，差错检测等。 | ![image-20230204085807530](https://wendaocsmaster.github.io/images/blogblog\image-20230204085807530.png) |
+   | 1.专家没有市场经验，完成标准没有商业驱动<br />力；<br />2.协议实现过分复杂，运行效率低；<br />3. 标准的指定周期太长，无法及时进入市场；<br/>4. 层次划分不太合理，某些功能在多个层次<br />中重复出现，例如流量控制，差错检测等。 | ![image-20230204085807530](https://wendaocsmaster.github.io/images/blog/image-20230204085807530.png) |
 
 2. 分层的必要性及各层解决的问题：
 
@@ -101,7 +101,7 @@ keywords: computer networks overview
 
    **物理层**：物理接口、比特信号的表示，传输介质位于物理层之下，<font color = red>解决的是何种信号表示比特 0 和 比特 1 的问题 </font>
 
-   **数据链路层**：一个网络中各个主机的地址（MAC地址），从比特流中区分出地址和数据（数据格式封装）、检测数据是否误码（差错检测）、接收方控制发送方注入网络的数据量（<font color=red>流量控制</font>）、出现差错的处理（不可靠传输）、以太网交换机的实现（自学习和转发帧）、协调各主机争用信道（CSMA/CD、CSMA/CA），<font color = red>解决的是数据包在一个网络或一段链路上传输的问题</font>
+   **数据链路层**：一个网络中各个主机的地址（MAC地址），从比特流中区分出地址和数据（数据格式封装）、检测数据是否误码（差错检测）、接收方控制发送方注入网络的数据量（<font color=red>流量控制</font>）、出现差错的处理（不可靠传输和可靠传输）、以太网交换机的实现（自学习和转发帧）、协调各主机争用信道（CSMA/CD、CSMA/CA），<font color = red>解决的是数据包在一个网络或一段链路上传输的问题</font>
 
    **网络层**：网络之间的各主机的标识（网络和主机个共同编址，IP地址）、路由器转发分组到指定网络（路由选择协议RIP、OSPF、BGP），<font color = red>解决的是数据包在多个网络之间传输的问题</font>
 
@@ -135,5 +135,5 @@ keywords: computer networks overview
 
 [深入浅出计算机网络（微课视频版）](http://www.tup.tsinghua.edu.cn/booksCenter/book_09342101.html)
 
-![img](https://wendaocsmaster.github.io/images/blogblog\093421-01.jpg)
+![img](https://wendaocsmaster.github.io/images/blog/093421-01.jpg)
 
