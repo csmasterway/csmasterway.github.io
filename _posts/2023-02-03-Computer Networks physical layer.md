@@ -164,3 +164,15 @@ keywords: computer networks physical layer
 ![image-20230204115307827](https://wendaocsmaster.github.io/images/blog/image-20230204115307827.png)
 
 ![image-20230204115318816](https://wendaocsmaster.github.io/images/blog/image-20230204115318816.png)
+
+
+
+
+
+
+
+## 参考资料
+
+[深入浅出计算机网络（微课视频版）](http://www.tup.tsinghua.edu.cn/booksCenter/book_09342101.html)
+
+![img](https://wendaocsmaster.github.io/images/blog/093421-01.jpg)
