@@ -72,7 +72,7 @@ keywords: computer networks overview
 
 5. 时延带宽积：传播时延和带宽的乘积，即以比特为单位的数据链路长度
 
-   ![image-20230204084214738](https://wendaocsmaster.github.io/images/blogblog\image-20230204084214738.png)
+   ![image-20230204084214738](https://wendaocsmaster.github.io/images/blog/image-20230204084214738.png)
 
 6. 往返时间：RTT ，发送端从发送数据分组开始，到发送端接收到接收端发来的数据分组确认为止，所需的总时间。
 
@@ -101,7 +101,7 @@ keywords: computer networks overview
 
    **物理层**：物理接口、比特信号的表示，传输介质位于物理层之下，<font color = red>解决的是何种信号表示比特 0 和 比特 1 的问题 </font>
 
-   **数据链路层**：一个网络中各个主机的地址（MAC地址），从比特流中区分出地址和数据（数据格式封装）、检测数据是否误码（差错检测）、接收方控制发送方注入网络的数据量（<font color=red>流量控制</font>）、出现差错的处理（不可靠传输和可靠传输）、以太网交换机的实现（自学习和转发帧）、协调各主机争用信道（CSMA/CD、CSMA/CA），<font color = red>解决的是数据包在一个网络或一段链路上传输的问题</font>
+   **数据链路层**：一个网络中各个主机的地址（MAC地址），从比特流中区分出地址和数据（数据格式封装）、检测数据是否误码（差错检测）、接收方控制发送方注入网络的数据量（<font color=red>流量控制</font>）、出现差错的处理（不可靠传输 [ wired ] 和可靠传输 [ 802.11 wireless: SW 、GBN、SR ]）、以太网交换机的实现（自学习和转发帧）、协调各主机争用信道（CSMA/CD、CSMA/CA），<font color = red>解决的是数据包在一个网络或一段链路上传输的问题</font>
 
    **网络层**：网络之间的各主机的标识（网络和主机个共同编址，IP地址）、路由器转发分组到指定网络（路由选择协议RIP、OSPF、BGP），<font color = red>解决的是数据包在多个网络之间传输的问题</font>
 
@@ -137,3 +137,4 @@ keywords: computer networks overview
 
 ![img](https://wendaocsmaster.github.io/images/blog/093421-01.jpg)
 
+ 
