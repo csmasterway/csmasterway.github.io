@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 计算机中的检错和纠错
+title: 计算机中编码的检错和纠错
 categories: [Blog, 计算机网络, 计算机组成原理]
 description: Data error checking and error correction in computer organization principles and computer networks
 keywords: 检错, 纠错, 奇偶校验, 海明码  
@@ -74,29 +74,29 @@ $$G = P_1 \bigoplus D_1\bigoplus D_2 \bigoplus D_3 \bigoplus D_4$$
 
 ​		对数据直接进行奇偶校验能够检测出奇数个bit错误，但不能检测出偶数个bit错误，不能定位到出错的bit位置。如何改进奇偶校验使得计算机能够检测出错误bit的位置，由此引出了二维奇偶校验。对数据进行分组，每n个数据位增加一个校验位，同时对于整个数据增加1个n + 1 位的数据校验位，如下图所示，每7bit数据增加1bit校验位，同时对整个数据包增加8bit的校验位。
 
-![image-20230206121203296](E:\myblog\csmasterway.github.io\images\blog\image-20230206121203296.png)
+![image-20230206121203296](https://wendaocsmaster.github.io/images/blog/image-20230206121203296.png)
 
 **<font color = red>对于1位bit错误可定位到该位的位置进而纠错</font>**
 
-![image-20230206121242837](E:\myblog\csmasterway.github.io\images\blog\image-20230206121242837.png)
+![image-20230206121242837](https://wendaocsmaster.github.io/images/blog/image-20230206121242837.png)
 
 **<font color = red>对于两位bit错误，均可检错但不一定能纠错</font>**
 
 如下图只能定位到出错的列但是无法定位到出错行，进而无法纠错
 
-![image-20230206121545678](E:\myblog\csmasterway.github.io\images\blog\image-20230206121545678.png)
+![image-20230206121545678](https://wendaocsmaster.github.io/images/blog/image-20230206121545678.png)
 
 但是如果是出于不同行或者不同列的两位错误可以检错也可以纠错
 
-![image-20230206122604258](E:\myblog\csmasterway.github.io\images\blog\image-20230206122604258.png)
+![image-20230206122604258](https://wendaocsmaster.github.io/images/blog/image-20230206122604258.png)
 
 **<font color = red>对于3位bit错误，均可检错但不一定能纠错</font>**
 
-![image-20230206122729885](E:\myblog\csmasterway.github.io\images\blog\image-20230206122729885.png)
+![image-20230206122729885](https://wendaocsmaster.github.io/images/blog/image-20230206122729885.png)
 
 **<font color = red>对于4位bit错误，均可检错但不一定能纠错</font>**
 
-![image-20230206122751761](E:\myblog\csmasterway.github.io\images\blog\image-20230206122751761.png)
+![image-20230206122751761](https://wendaocsmaster.github.io/images/blog/image-20230206122751761.png)
 
 ​		综上，二维奇偶检验的核心是让一个数据位参加多个校验组，一个数据位发生错误可以在多个检测码中反映出来，可以有效提高检错能力。
 
@@ -117,22 +117,22 @@ $$N = K + r < 2^r -1$$
 
 以4位数据位为例（7,4）海明码 r = 3，数据位$$D_i$$校验位$$P_i$$是如何映射到海明编码中的位置的
 
-![image-20230206124125028](E:\myblog\csmasterway.github.io\images\blog\image-20230206124125028.png)
+![image-20230206124125028](https://wendaocsmaster.github.io/images/blog/image-20230206124125028.png)
 
 **<font color = red>检错码的值表示出错的位置</font>**
 
-![image-20230206123936786](E:\myblog\csmasterway.github.io\images\blog\image-20230206123936786.png)
+![image-20230206123936786](https://wendaocsmaster.github.io/images/blog/image-20230206123936786.png)
 
 分组关系用图表示如下
 
-![image-20230206130314525](E:\myblog\csmasterway.github.io\images\blog\image-20230206130314525.png)
+![image-20230206130314525](https://wendaocsmaster.github.io/images/blog/image-20230206130314525.png)
 
-| ![image-20230206124034274](E:\myblog\csmasterway.github.io\images\blog\image-20230206124034274.png) | G1(P1,H3,H5,H7)<br />G2(P2,H3,H6,H7)<br />G3(P3,H5,H6,H7) |
+| ![image-20230206124034274](https://wendaocsmaster.github.io/images/blog/image-20230206124034274.png) | G1(P1,H3,H5,H7)<br />G2(P2,H3,H6,H7)<br />G3(P3,H5,H6,H7) |
 | ------------------------------------------------------------ | --------------------------------------------------------- |
 
 于是得到如下数据位$$D_i$$校验位$$P_i$$是映射关系
 
-| ![image-20230206125730650](E:\myblog\csmasterway.github.io\images\blog\image-20230206125730650.png) | G1=P1⊕D1⊕D2⊕D4<br />G2=P2⊕D1⊕D3⊕D4<br />G3=P3⊕D2⊕D3⊕D4 |
+| ![image-20230206125730650](https://wendaocsmaster.github.io/images/blog/image-20230206125730650.png) | G1=P1⊕D1⊕D2⊕D4<br />G2=P2⊕D1⊕D3⊕D4<br />G3=P3⊕D2⊕D3⊕D4 |
 | ------------------------------------------------------------ | ------------------------------------------------------ |
 
 综上：
