@@ -1,7 +1,7 @@
 ---
 layout: post
-title: 计算机网络数据链路层
-categories: [Blog, 计算机网络]
+title: 计算机网络数据链路层概览
+categories: [计算机网络]
 description: 解决的是数据包在一个网络内或者一段链路上传输的问题
 keywords: computer networks data link layer 
 ---
