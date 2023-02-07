@@ -25,11 +25,11 @@ keywords: computer networks data link layer
 
 1. 在整个网络体系中的地位：垂直和水平
 
-   ![image-20230207161043169](E:\myblog\csmasterway.github.io\images\blog\image-20230207161043169.png)
+   ![image-20230207161043169](https://wendaocsmaster.github.io/images/blog/image-20230207161043169.png)
 
    ​		如上图，从垂直方向上看，数据链路层位于 OSI 参考模型中的第二层，使用物理层提供的服务同时向网络层提供服务，提供给网络层的服务访问点为MAC帧的类型字段，表明MAC帧中的数据内容是什么。
 
-   ![image-20230207161431369](E:\myblog\csmasterway.github.io\images\blog\image-20230207161431369.png)
+   ![image-20230207161431369](https://wendaocsmaster.github.io/images/blog/image-20230207161431369.png)
 
 2. 数据链路和帧：
 

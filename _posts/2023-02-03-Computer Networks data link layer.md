@@ -6,7 +6,7 @@ description: 数据链路层要解决什么样的问题
 keywords: computer networks data link layer 
 ---
 
-+ [数据链路层要解决什么样的问题、数据链路层概览](https://wendaocsmaster.github.io/2023/02/07/Computer Networks data link layer - overview)
++ [数据链路层要解决什么样的问题、数据链路层概览](https://wendaocsmaster.github.io/2023/02/07/Computer-Networks-data-link-layer-overview/)
 
 ## 参考资料
 
