@@ -10,19 +10,19 @@ keywords: computer networks data link layer
 
 1. 封装：自顶向下逐层封装
 
-![image-20230207165201972](E:\myblog\csmasterway.github.io\images\blog\image-20230207165201972.png)
+![image-20230207165201972](https://wendaocsmaster.github.io/images/blog/image-20230207165201972.png)
 
 2. 帧格式——帧的首部和尾部含有重要的控制信息
 
    + 点对点协议 PPP 链路的帧格式
 
-     ![image-20230207165502224](E:\myblog\csmasterway.github.io\images\blog\image-20230207165502224.png)
+     ![image-20230207165502224](https://wendaocsmaster.github.io/images/blog/image-20230207165502224.png)
 
      PPP 帧的首部和尾部的作用之一就是帧定界
 
    + 传统以太网MAC帧格式
 
-     ![image-20230207165411719](E:\myblog\csmasterway.github.io\images\blog\image-20230207165411719.png)
+     ![image-20230207165411719](https://wendaocsmaster.github.io/images/blog/image-20230207165411719.png)
 
      ​		以太网帧格式中并没有定界符，而是在发送以太网帧时在物理层添加 8 字节的前导码，其中前 7B 为前同步码用于接收方进行时钟同步，还有 1 字节的帧定界符， 在发送完一个帧后要间隔一定时间才能发送下一帧，同时也能留给接收方一定的时间准备接收下一帧。这一段时间叫做帧间间隔，经典（传统）以太网的速度为10Mbps，规定发送96bit的时间作为帧间间隔，即9.6us。
 
