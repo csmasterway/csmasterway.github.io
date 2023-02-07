@@ -1,7 +1,7 @@
 ---
 layout: post
-title: 计算机网络数据链路层透明传输和差错检测
-categories: [计算机网络]
+title: 计算机网络数据链路层
+categories: [Blog, 计算机网络]
 description: 数据链路层要解决什么样的问题
 keywords: computer networks data link layer 
 ---
