@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 计算机网络数据链路层概览
+title: 计算机网络数据链路层
 categories: [Blog, 计算机网络]
 description: 数据链路层要解决什么样的问题
 keywords: computer networks data link layer 
