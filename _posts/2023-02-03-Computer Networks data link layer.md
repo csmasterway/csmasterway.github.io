@@ -11,6 +11,7 @@ keywords: computer networks data link layer
 + [如何实现数据链路层帧的可靠传输](https://wendaocsmaster.github.io/2023/02/07/Computer-Networks-data-link-layer-reliable-transmission/)
 + 如何实现数据链路层的数据封装
   + [点对点链路PPP协议封装格式](https://wendaocsmaster.github.io/2023/02/08/Computer-Networks-data-link-layer-ppp/)
+  + [计算机网络数据链路层有线共享式以太网封装格式CSMA/CD](https://wendaocsmaster.github.io/2023/02/08/Computer-Networks-data-link-layer-CSMA-CD/)
 
 ## 参考资料
 
