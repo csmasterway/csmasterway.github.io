@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 计算机网络数据链路层有线共享式以太网封装格式
+title: 计算机网络数据链路层无线局域网封装格式
 categories: [计算机网络]
 description: 如何实现数据链路层封装
 keywords: computer networks data link layer 
