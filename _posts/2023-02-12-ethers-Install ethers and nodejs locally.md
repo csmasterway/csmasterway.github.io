@@ -1,6 +1,6 @@
 ---
 layout: post
-title: How to install ethers and nodejs locally
+title: 如何在本地安装 ether 和 nodejs
 categories: [Blog, ethers, js]
 description: start to learn smart contracts 
 keywords:ethers
