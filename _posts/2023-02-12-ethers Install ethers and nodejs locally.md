@@ -3,7 +3,7 @@ layout: post
 title: 如何在本地安装nodejs和ethers
 categories: [Blog, ethers, js]
 description: start to learn smart contracts 
-keywords:ethers
+keywords: ethers
 ---
 
 1. 安装[nodejs](https://nodejs.org/zh-cn/download/)
@@ -20,7 +20,7 @@ keywords:ethers
    npm init -y
    ~~~
 
-4.  在package.json中添加
+4. 在package.json中添加
 
    ~~~
    "type":"module"
