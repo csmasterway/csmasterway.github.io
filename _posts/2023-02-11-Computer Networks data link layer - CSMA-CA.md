@@ -88,9 +88,9 @@ keywords: computer networks data link layer
 
    + 信道预约也属于虚拟载波监听机制，只要听到数据帧、RTS帧和CTS帧中的任何一个就能知道信道被占用的时间，而不需要真正监听到信道上的信号。虚拟载波监听机制解决了隐蔽站带来的信号碰撞问题。
 
-   + ![image-20230212105744064](https://wendaocsmaster.github.io/images/blog/image-20230212105744064.png)
+     ![image-20230212105744064](https://wendaocsmaster.github.io/images/blog/image-20230212105744064.png)
    
-   + ![image-20230212105753507](https://wendaocsmaster.github.io/images/blog/image-20230212105753507.png)
+     ![image-20230212105753507](https://wendaocsmaster.github.io/images/blog/image-20230212105753507.png)
 
 ## 802.11无线局域网MAC帧
 
