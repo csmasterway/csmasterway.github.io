@@ -52,6 +52,8 @@ keywords: computer networks network layer
    + 全球单播地址：IPv6全球单播地址使用三级结构，方便路由器更快查找路由
 
      前48bit分配给公司和机构（相当于IPv4分类地址中的网络号），中间16bit用于各单位构建自己的子网，最后64bit用于指明主机或者路由器的各个接口，相当于IPv4分类地址中的主机号
+     
+     ![image-20230214234507780](https://wendaocsmaster.github.io/images/blog/image-20230214234507780.png)
 
 ## 参考资料
 
