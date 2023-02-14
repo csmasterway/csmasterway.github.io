@@ -2,8 +2,8 @@
 layout: post
 title: 计算机网络网络层
 categories: [Blog, 计算机网络]
-description: 如何实现以太网的扩展
-keywords: computer networks data link layer 
+description: 网络层
+keywords: computer networks network layer
 ---
 
 ## 网络层要解决什么样的问题
