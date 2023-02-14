@@ -14,12 +14,12 @@ keywords: computer networks network layer
   
 + 如何实现对传输层TCP报文段或者UDP用户数据报的封装？（IPv4、IPv6公网地址和私网地址）
 
-  + IPv4
+  + [IPv4]
   + IPv6
 
 + 如何实现路由器对数据分组的正确转发？（地址解析协议：ARP； 内部网关协议IGP：RIP、OSPF ；外部网关协议：BGP；网际控制报文协议：ICMP）
 
-  + IP数据报转发的过程
+  + [IP数据报转发的过程](https://wendaocsmaster.github.io/2023/02/14/Computer-Networks-network-layer-The-process-of-sending-and-forwarding-IP-datagrams/)
 
   + ARP地址解析协议
 
