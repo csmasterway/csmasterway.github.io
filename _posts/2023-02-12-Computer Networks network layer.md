@@ -9,13 +9,28 @@ keywords: computer networks network layer
 ## 网络层要解决什么样的问题
 
 + 如何实现各网络之间的主机标识？（网络和主机编址，IP地址）
-  + [Ipv4编址](https://wendaocsmaster.github.io/2023/02/12/Computer-Networks-network-layer-How-to-implement-the-identification-of-each-host-at-the-network-layer/)
+  + [IPv4编址](https://wendaocsmaster.github.io/2023/02/12/Computer-Networks-network-layer-How-to-implement-the-identification-of-each-host-at-the-network-layer/)
+  + [IPv6编址](https://wendaocsmaster.github.io/2023/02/13/Computer-Networks-network-layer-How-to-implement-the-identification-of-each-host-at-the-network-layer-ipv6/)
+  
 + 如何实现对传输层TCP报文段或者UDP用户数据报的封装？（IPv4、IPv6公网地址和私网地址）
+
+  + IPv4
+  + IPv6
+
 + 如何实现路由器对数据分组的正确转发？（地址解析协议：ARP； 内部网关协议IGP：RIP、OSPF ；外部网关协议：BGP；网际控制报文协议：ICMP）
+
+  + IP数据报转发的过程
+
+  + ARP地址解析协议
+
 + 如何解决内网访问公网数据？（NAT，NAPT）
+
 + 如何在公网上传输单位内部数据？（虚拟专用网VPN）
+
 + 如何实现在网络上“一对多”的通信以节省网络资源？（IP多播、网际组管理协议：IGMP）
+
 + 如何实现用户主机在移动过程中保持访问网络资源的连续性？（移动IP技术）
+
 + 未来网络体系结构SDN
 
 ​		综上，网络层要解决的问题实际上是如何实现各网络之间数据分组的正确传输。网络层设备路由器的主要功能就是实现数据分组的路由选择和分组转发。网络层可以向上层提供两种服务：
