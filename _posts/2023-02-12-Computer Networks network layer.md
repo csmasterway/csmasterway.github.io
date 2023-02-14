@@ -9,6 +9,7 @@ keywords: computer networks network layer
 ## 网络层要解决什么样的问题
 
 + 如何实现各网络之间的主机标识？（网络和主机编址，IP地址）
+  + [Ipv4编址](https://wendaocsmaster.github.io/2023/02/12/Computer-Networks-network-layer-How-to-implement-the-identification-of-each-host-at-the-network-layer/)
 + 如何实现对传输层TCP报文段或者UDP用户数据报的封装？（IPv4、IPv6公网地址和私网地址）
 + 如何实现路由器对数据分组的正确转发？（地址解析协议：ARP； 内部网关协议IGP：RIP、OSPF ；外部网关协议：BGP；网际控制报文协议：ICMP）
 + 如何解决内网访问公网数据？（NAT，NAPT）
