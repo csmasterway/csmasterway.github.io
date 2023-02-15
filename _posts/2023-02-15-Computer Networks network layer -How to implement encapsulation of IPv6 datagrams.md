@@ -8,7 +8,7 @@ keywords: computer networks network layer
 
 ## IPv6数据报封装格式
 
-![image-20230215114919752](https//wendaocsmaster.github.io/images/blog/image-20230215114919752.png)
+![image-20230215114919752](https://wendaocsmaster.github.io/images/blog/image-20230215114919752.png)
 
 1. 版本：4bit，表示IP协议的版本，IPv6数据报该字段的值为6
 
@@ -58,17 +58,17 @@ keywords: computer networks network layer
 
    如下图所示使用双协议栈进行通信
 
-   ![image-20230215121128183](https//wendaocsmaster.github.io/images/blog/image-20230215121128183.png)
+   ![image-20230215121128183](https://wendaocsmaster.github.io/images/blog/image-20230215121128183.png)
 
 2. 隧道技术Tunneling
 
    + 当IPv6数据报进入IPv4网络时，将整个IPv6数据报作为IPv4数据报的数据载荷重新封装。
    + 当被IPv4封装后的IPv6数据报要重新进入IPv6网络时候，再讲IPv4数据报解封装，取出原来的IPv6数据报并转发。
 
-   ![image-20230215121542212](https//wendaocsmaster.github.io/images/blog/image-20230215121542212.png)
+   ![image-20230215121542212](https://wendaocsmaster.github.io/images/blog/image-20230215121542212.png)
 
 ## 参考资料
 
 [深入浅出计算机网络（微课视频版）](http://www.tup.tsinghua.edu.cn/booksCenter/book_09342101.html)
 
-![img](https//wendaocsmaster.github.io/images/blog/093421-01.jpg)
+![img](https://wendaocsmaster.github.io/images/blog/093421-01.jpg)
