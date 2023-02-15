@@ -17,11 +17,9 @@ Cryptographic hash function
 
 + Hiding
 
-  ~~~
-  If hash(x) is known, but x cann't be derived from hash(x) because Hash(x) doesn't revele any information about x. In other words, we can only derive x by brute-force. For example, hash each value in the entire fetch space.
-  ~~~
+  If hash(x) is known, but x can not be derived from hash(x) because Hash(x) doesn't reveal any information about x. In other words, we can only derive x by brute-force. For example, hash each value in the entire fetch space.
 
-  These  characteristics can be used to implement digital commitment or digital equivalent of a sealed envelope. But the hiding is conditional on the value space being large enough and every value equally distributed throughout the entire fetch space. Usually, if the input data is not qualified the condition, we can add a random nonce, then hash them together, such as Hash(X||nonce).
+These  characteristics can be used to implement digital commitment or digital equivalent of a sealed envelope. But the hiding is conditional on the value space being large enough and every value equally distributed throughout the entire fetch space. Usually, if the input data is not qualified the condition, we can add a random nonce, then hash them together, such as 'Hash(X||nonce)'.
 
 + Puzzle friendly
 
