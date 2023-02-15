@@ -11,6 +11,7 @@ keywords: computer networks network layer
 + 如何实现各网络之间的主机标识？（网络和主机编址，IP地址）
   + [IPv4编址](https://wendaocsmaster.github.io/2023/02/13/Computer-Networks-network-layer-How-to-implement-the-identification-of-each-host-at-the-network-layer-ipv4/)
   + [IPv6编址](https://wendaocsmaster.github.io/2023/02/13/Computer-Networks-network-layer-How-to-implement-the-identification-of-each-host-at-the-network-layer-ipv6/)
+  + [如何规划IPv4地址的分配](https://wendaocsmaster.github.io/2023/02/15/Computer-Networks-network-layer-How-to-plan-ipv4-address-assignment/)
   
 + 如何实现对传输层TCP报文段或者UDP用户数据报的封装？（IPv4、IPv6公网地址和私网地址）
 
