@@ -30,6 +30,8 @@ keywords: computer networks network layer
 
 + 如何在公网上传输单位内部数据？（虚拟专用网VPN）
 
+  [计算机网络网络层如何解决内网访问公网数据 ](https://wendaocsmaster.github.io/2023/02/15/Computer-Networks-network-layer-How-to-resolve-intranet-access-to-public-network-data/)
+
 + 如何实现在网络上“一对多”的通信以节省网络资源？（IP多播、网际组管理协议：IGMP）
 
 + 如何实现用户主机在移动过程中保持访问网络资源的连续性？（移动IP技术）
