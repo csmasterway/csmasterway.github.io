@@ -1,7 +1,7 @@
 ---
 layout: post
 title: block chain
-categories: Block Chain
+categories: [Blog, Block Chain]
 description: 区块链
 keywords: computer networks network layer 
 ---
