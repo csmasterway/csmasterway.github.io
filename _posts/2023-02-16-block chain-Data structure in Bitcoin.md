@@ -16,7 +16,7 @@ Commonly speaking, a block chain is a chain list of blocks connected one by one.
 
 The following diagram is a simple block chain.
 
-![image-20230216180550462](E:\myblog\csmasterway.github.io\images\blog\image-20230216180550462.png)
+![image-20230216180550462](https://wendaocsmaster.github.io/images/blog/image-20230216180550462.png)
 
 ​		The first block is called the genesis block, the last is called the most recent block. Each block has a hash pointer that points to the previous block except the genesis block, the last block's hash pointer is stored in the system. The hash pointer is calculated from hashing the previous block including the hash pointer in the block. By adopting the data structure, we can implement the tamper-evident log. If an attacker changes a block record, all hash pointers behind the tampered block will be changed including the latest block's hash pointer. However, the hash pointer of the latest block is stored in the system. In a word, we can detect any changes easily in the block chain, because any changes in the block will lead to a change of the latest block's pointer to occur. Based on this feature, some nodes in Bitcoin can only store the latest batch block information and these nodes are named light nodes, while others that possess full blocks information are named full nodes. When some blocks' information is used, they can apply for the information from others with full blocks information. But how to know the information applied from others is true?  To solve the problem, the above anti-tampering feature is used. 
 
@@ -26,7 +26,7 @@ The following diagram is a simple block chain.
 
   The following diagram is a simple Merkle tree.
 
-  ![image-20230216190322415](E:\myblog\csmasterway.github.io\images\blog\image-20230216190322415.png)
+  ![image-20230216190322415](https://wendaocsmaster.github.io/images/blog/image-20230216190322415.png)
 
   ​		All layers are hash pointers layers except the bottom layer called the data blocks layer. Similar to the previous descriptions, a node in Bitcoin only possesses the root hash value, it can easily detect any changes in the block chain. Because any tampering with the block record will cause a  change of the Merkle root hash value to occur. Therefore, one of the effects of the Merkle is to provide Merkle proof.
 
