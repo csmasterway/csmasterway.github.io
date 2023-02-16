@@ -8,8 +8,6 @@ keywords: computer networks network layer
 
 Cryptographic hash function
 
-Cryptographic hash function
-
 - Collision resistance 
 
   ```
