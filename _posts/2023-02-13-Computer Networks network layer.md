@@ -24,6 +24,16 @@ keywords: computer networks network layer
 
   + [ARP地址解析协议](https://wendaocsmaster.github.io/2023/02/15/Computer-Networks-network-layer-ARP/)
 
+  + [路由配置]
+
+  + [路由选择协议RIP](https://wendaocsmaster.github.io/2023/02/15/Computer-Networks-network-layer-RIP/)
+
+  + [路由选择协议OSPF]
+
+  + [路由选择协议BGP]
+
+  + [网际控制报文协议ICMP]
+
 + 如何解决内网访问公网数据？（NAT，NAPT）
 
   [计算机网络网络层如何解决内网访问公网数据 ](https://wendaocsmaster.github.io/2023/02/15/Computer-Networks-network-layer-How-to-resolve-intranet-access-to-public-network-data/)
