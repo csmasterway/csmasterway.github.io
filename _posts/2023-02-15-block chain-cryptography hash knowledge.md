@@ -23,9 +23,9 @@ These characteristics can be used to implement digital commitment or the digital
 
 - Puzzle friendly
 
-  The calculation of the hash value is unpredictable. If we get an input value x, we can not know Hash(x) except for calculating the Hash(x). In others words, If the hash you want to calculate falls within a certain range, there is no good method but to try each input data. Then compare the calculated value and the qualified range. 
+  The calculation of the hash value is unpredictable. If we get an input value x, we can not know Hash(x) except for calculating the Hash(x). In others words, if we want to get some data whose hash value falls within a certain range, there is no good method but to try each input data. Then compare the calculated value with the qualified range. 
 
-  The mining is to find a random nonce contained in the block header, when Hash(block header) is less than or equal to the target, the miner will get a reward. Thus, the process is used for proof of work and is also called POW. However, if we know the nonce, everyone can prove it easily by calculating hash value—— Hash(block header). This characteristic is also known to be difficult to solve, but easy to verify.
+  The mining is to find a random nonce contained in the block header, when Hash(block header) is less than or equal to the target, the miner will get a reward. Thus, the process is used for proof of work and is also called POW. However, if we know the nonce, everyone can prove it easily by calculating hash value—— Hash(block header). This characteristic is also known to be difficult to solve, but easy to verify. 
 
 The hash function in Bitcoin is called SHA-256, an asymmetric encryption algorithm.
 
