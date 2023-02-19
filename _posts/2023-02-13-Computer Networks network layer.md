@@ -24,11 +24,11 @@ keywords: computer networks network layer
 
   + [ARP地址解析协议](https://wendaocsmaster.github.io/2023/02/15/Computer-Networks-network-layer-ARP/)
 
-  + [路由配置]
+  + [路由配置](https://wendaocsmaster.github.io/2023/02/16/Computer-Networks-network-layer-Router-configuration/)
 
   + [路由选择协议RIP](https://wendaocsmaster.github.io/2023/02/15/Computer-Networks-network-layer-RIP/)
 
-  + [路由选择协议OSPF]
+  + [路由选择协议OSPF](https://wendaocsmaster.github.io/2023/02/18/Computer-Networks-network-layer-OSPF/)
 
   + [路由选择协议BGP]
 
