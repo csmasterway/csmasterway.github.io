@@ -32,7 +32,7 @@ keywords: computer networks network layer
 
   + [路由选择协议BGP](https://wendaocsmaster.github.io/2023/02/18/Computer-Networks-network-layer-BGP/)
 
-  + [网际控制报文协议ICMP]
+  + [网际控制报文协议ICMP](https://wendaocsmaster.github.io/2023/02/19/Computer-Networks-network-layer-ICMP/)
 
 + 如何解决内网访问公网数据？（NAT，NAPT）
 
@@ -44,7 +44,7 @@ keywords: computer networks network layer
 
 + 如何实现在网络上“一对多”的通信以节省网络资源？（IP多播、网际组管理协议：IGMP）
 
-+ 如何实现用户主机在移动过程中保持访问网络资源的连续性？（移动IP技术）
++ 如何实现用户主机在移动过程中保持访问网络资源的连续性？[（移动IP技术）](https://wendaocsmaster.github.io/2023/02/19/Computer-Networks-network-layer-Mobile-IP-Technologies/)
 
 + 未来网络体系结构SDN
 

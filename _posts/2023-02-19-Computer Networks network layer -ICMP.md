@@ -1,12 +1,12 @@
 ---
 layout: post
-title: 计算机网络网络层网际控制报文协议OSPF
+title: 计算机网络网络层网际控制报文协议ICMP
 categories: [计算机网络]
 description: 网络层
 keywords: computer networks network layer 
 ---
 
-## 网际控制报文协议OSPF
+## 网际控制报文协议ICMP
 
 1. 为了解决在IP数据报传输过程中出现差错后向源主机报告等问题，从而更有效地转发IP数据报以及提高IP数据报交付的成功率，在网际层实现了ICMP网际控制报文协议。主机或者路由器可以使用ICMP来发送差错报告报文或者询问报文。ICMP报文被封装在IP数据报中发送。
 
