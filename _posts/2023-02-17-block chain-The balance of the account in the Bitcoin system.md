@@ -1,3 +1,15 @@
+---
+layout: post
+title: The balance of the account in the Bitcoin system
+categories: [Blog, Block Chain]
+description: 区块链
+keywords: computer networks network layer 
+---
+
+The nature of the Bitcoin system is a decentralized ledger, but the Bitcoin system doesn't record every account's balance explicitly. So, how do you know an account's balance in the Bitcoin system? The account's balance only can be known by calculating. All blocks in the Bitcoin system record two kinds of transactions, one is famous as a kind of coin-based transaction and the other as a sort of transfer transaction. Every transaction states where the transferred Bitcoins come from and which account they were sent to. So, you can find all transactions about the account that contain inward and outward transfer transactions. The difference between inward transactions and outward transactions is the balance. Therefore, the Bitcoin system is also called the transfer-based ledger.
+
+The full nodes in the Bitcoin system maintain a data structure famous as the UTXO, unspent transaction output, which is stored in the nodes' memory. Every element in the UTXO records the transaction hash value of generating the output transactions and the position in the transaction, the information will help to locate a UTXO's output, and a node will know the account's balance rapidly. Meanwhile, the designation can defend double-spending. A transaction might have several input and output accounts, so a transaction might need different accounts' signatures provided by the input accounts.  Generally, a transaction's input Bitcoins are greater than output Bitcoins, because a little gas fee is essentially paid to miners, which is vital to encourage miners to package transactions and issue the next block. Every transaction might consume a UTXO element and generate several new UTXO elements, therefore, the memory occupied by the UTXO in a full node is increasing gradually. The UTXO elements consumed will be eliminated  from the UTXO and new UTXO elements will be added to the UTXO.
+
 比特币是基于交易的去中心化账本ledger
 
 区块中记录的交易包括铸币交易和转账交易，但是系统中并没有在某个地方显式地存储每个账户的余额。要想得知某个账户的余额，需要从区块链记录的交易中推算，转入多少和转出多少。全节点维护了一个UTXO的数据结构，Unspent Transaction Output，用来防止双花，因此全节点需要在内存中维护此数据结构，以便快速检测double spending。一个交易可能有多个输出，B拿到后花掉了，不在其中，C在。
@@ -18,7 +30,7 @@ total inputs = total outputs
 
 难度太大，搜索空间太小，扩大搜索空间
 
-coibase 域
+coinbase 域
 
 真正的mining有两层循环，外层循环调整coinbase域的extra nonce 算出merkle root value 后内层循环调整block header里的nonce
 
