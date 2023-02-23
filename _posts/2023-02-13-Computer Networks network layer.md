@@ -42,11 +42,11 @@ keywords: computer networks network layer
 
   [计算机网络网络层如何解决内网访问公网数据 ](https://wendaocsmaster.github.io/2023/02/15/Computer-Networks-network-layer-How-to-resolve-intranet-access-to-public-network-data/)
 
-+ 如何实现在网络上“一对多”的通信以节省网络资源？（IP多播、网际组管理协议：IGMP）
++ 如何实现在网络上“一对多”的通信以节省网络资源？[（IP多播、网际组管理协议：IGMP）](https://wendaocsmaster.github.io/2023/02/22/Computer-Networks-network-layer-IGMP/)
 
 + 如何实现用户主机在移动过程中保持访问网络资源的连续性？[（移动IP技术）](https://wendaocsmaster.github.io/2023/02/19/Computer-Networks-network-layer-Mobile-IP-Technologies/)
 
-+ 未来网络体系结构SDN
++ [未来网络体系结构SDN](https://wendaocsmaster.github.io/2023/02/22/Computer-Networks-network-layer-SDN/)
 
 ​		综上，网络层要解决的问题实际上是如何实现各网络之间数据分组的正确传输。网络层设备路由器的主要功能就是实现数据分组的路由选择和分组转发。网络层可以向上层提供两种服务：
 
