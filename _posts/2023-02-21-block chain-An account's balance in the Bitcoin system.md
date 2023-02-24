@@ -8,7 +8,7 @@ keywords: computer networks network layer
 
 An account's balance in the Bitcoin system.
 
-The nature of the Bitcoin system is a decentralized ledger, but the Bitcoin system doesn't record every account's balance explicitly. So, how do you know an account's balance in the Bitcoin system? The account's balance only can be known by calculating. All blocks in the Bitcoin system record two kinds of transactions, one is famous as a kind of coin-based transaction and the other as a sort of transfer transaction. Every transaction states where the transferred Bitcoins come from and which account they were sent to. So, you can find all transactions about the account that contain inward and outward transfer transactions. The difference between inward transactions and outward transactions is the balance. Therefore, the Bitcoin system is also called the transfer-based ledger.
+The nature of the Bitcoin system is a decentralized ledger, but the Bitcoin system doesn't record every account's balance explicitly. So, how do you know an account's balance in the Bitcoin system? The account's balance only can be known by calculating. All blocks in the Bitcoin system record two kinds of transactions, one is known as a kind of coin-based transaction and the other as a sort of transfer transaction. Every transaction states where the transferred Bitcoins come from and which account they were sent to. So, you can find all transactions about the account that contain inward and outward transfer transactions. The difference between inward transactions and outward transactions is the balance. Therefore, the Bitcoin system is also called the transfer-based ledger.
 
 
 
