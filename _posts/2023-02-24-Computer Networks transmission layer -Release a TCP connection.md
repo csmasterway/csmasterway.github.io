@@ -32,6 +32,10 @@ keywords: computer networks network layer
 
    **<font color = red>如果主机在发送确认后立即进入CLOSED状态，而此时很不幸客户端发送的确认报文在网络中丢失了，服务器收不到该确认，当服务器的请求断开连接报文的超时重传计时器倒计时结束，服务器会继续重传该请求报文，但是此时客户端已经无法对该报文做出响应，导致一段时间内该TCP连接无法关闭，浪费服务器主机资源和网络资源</font>**
 
+6. TCP保活计时器
+
+   ![image-20230225102622894](https://wendaocsmaster.github.io/images/blog/image-20230225102622894.png)
+
 ## 参考资料
 
 [网络是怎样连接的](https://book.douban.com/subject/26941639/)(日)*户根勤著*; *周自恒译*. 责任者, 户根勤; 周自恒. 出版发行, 北京: 人民邮电出版社,2017
