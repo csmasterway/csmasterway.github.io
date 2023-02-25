@@ -13,8 +13,8 @@ keywords: computer networks network layer
 ## 具体问题
 
 + 如何标识位于主机和服务器上的对等实体，即用于通信的进程？端口号
-+ 如何实现传输层的可靠传输？流量控制和拥塞控制
-+ 如何对传输层报文进行封装？TCP、UDP报文格式
++ 如何实现传输层的可靠传输？[流量控制和拥塞控制](https://wendaocsmaster.github.io/2023/02/25/Computer-Networks-transmission-layer-Flow-control-and-congestion-control/)
++ 如何对传输层报文进行封装？[TCP、UDP报文格式](https://wendaocsmaster.github.io/2023/02/24/Computer-Networks-transmission-layer-TCP/)
 
 
 
