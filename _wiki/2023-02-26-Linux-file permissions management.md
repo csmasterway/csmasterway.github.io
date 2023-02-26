@@ -18,15 +18,15 @@ keywords: Linux
 ls -l
 ```
 
-![图片描述](https://wendaocsmaster.github.io/images/blog/image-20230225103214468.pnguid871732-20200302-1583147815919.png))
+![图片描述](https://wendaocsmaster.github.io/images/blog/uid871732-20200302-1583147815919.png)
 
 你可能除了知道最后面那一项是文件名之外，其它项就不太清楚了，那么到底是什么意思呢：
 
-![pic](https://wendaocsmaster.github.io/images/blog/image-20230225103214468.png3-9.png)
+![pic](https://wendaocsmaster.github.io/images/blog/3-9.png)
 
 可能你还是不太明白，比如第一项文件类型和权限那一堆东西具体指什么，链接又是什么，何为最后修改时间，下面一一道来：
 
-![pic](https://wendaocsmaster.github.io/images/blog/image-20230225103214468.png3-10.png)
+![pic](https://wendaocsmaster.github.io/images/blog/3-10.png)
 
 - 文件类型
 
@@ -56,7 +56,7 @@ ls -l
 ls -a
 ```
 
-![图片描述](https://wendaocsmaster.github.io/images/blog/image-20230225103214468.pnguid871732-20200302-1583148438097.png))
+![图片描述](https://wendaocsmaster.github.io/images/blog/uid871732-20200302-1583148438097.png))
 
 当然，你可以同时使用 `-a` 和 `-l` 参数：
 
@@ -76,7 +76,7 @@ ls -dl <目录名>
 ls -asSh
 ```
 
-![图片描述](https://wendaocsmaster.github.io/images/blog/image-20230225103214468.pnguid871732-20200302-1583148552984.png)
+![图片描述](https://wendaocsmaster.github.io/images/blog/uid871732-20200302-1583148552984.png)
 
 其中小 s 为显示文件大小，大 S 为按文件大小排序，若需要知道如何按其它方式排序，可以使用 `man ls` 命令查询。
 
