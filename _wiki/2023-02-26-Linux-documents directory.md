@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Linux文件权限管理
+title: Linux文件目录
 categories: [Linux]
 description: Linux
 keywords: Linux
