@@ -10,7 +10,7 @@ keywords: Linux
 
 简单理解了变量的概念，就很容易理解环境变量了。环境变量的作用域比自定义变量的要大，如 Shell 的环境变量作用于自身和它的子进程。在所有的 UNIX 和类 UNIX 系统中，每个进程都有其各自的环境变量设置，且默认情况下，当一个进程被创建时，除了创建过程中明确指定的话，它将继承其父进程的绝大部分环境设置。Shell 程序也作为一个进程运行在操作系统之上，而我们在 Shell 中运行的大部分命令都将以 Shell 的子进程的方式运行。
 
-![1](E:\myblog\csmasterway.github.io\images\blog\5-2.png)
+![1](https://wendaocsmaster.github.io/images/blog/5-2.png)
 
 通常我们会涉及到的变量类型有三种：
 
@@ -26,7 +26,7 @@ keywords: Linux
 | `env`    | 显示与当前用户相关的环境变量，还可以让命令在指定环境中运行。 |
 | `export` | 显示从 Shell 中导出成环境变量的变量，也能通过它将自定义变量导出为环境变量。 |
 
-![1](E:\myblog\csmasterway.github.io\images\blog\5-3.png)
+![1](https://wendaocsmaster.github.io/images/blog/5-3.png)
 
 你可以更直观的使用 `vimdiff` 工具比较一下它们之间的差别：
 
@@ -46,11 +46,11 @@ vimdiff env.txt export.txt set.txt
 
 使用 `vimdiff` 工具比较导出的几个文件的内容，退出 `vimdiff` 需要按下 Esc 后输入 `:q` 即可退出。
 
-![1](E:\myblog\csmasterway.github.io\images\blog\document-uid735639labid60timestamp1532339264870.gif)
+![1](https://wendaocsmaster.github.io/images/blog/document-uid735639labid60timestamp1532339264870.gif)
 
 关于哪些变量是环境变量，可以简单地理解成在当前进程的子进程有效则为环境变量，否则不是（有些人也将所有变量统称为环境变量，只是以全局环境变量和局部环境变量进行区分，我们只要理解它们的实质区别即可）。我们这里用 `export` 命令来体会一下，先在 Shell 中设置一个变量 `temp=shiyanlou`，然后再新创建一个子 Shell 查看 `temp` 变量的值：
 
-![此处输入图片的描述](E:\myblog\csmasterway.github.io\images\blog\document-uid735639labid60timestamp1532339293501.png)
+![此处输入图片的描述](https://wendaocsmaster.github.io/images/blog/document-uid735639labid60timestamp1532339293501.png)
 
 **注意：为了与普通变量区分，通常我们习惯将环境变量名设为大写。**
 
@@ -71,7 +71,7 @@ cd /home/shiyanlou
 ls -a
 ```
 
-![图片描述](E:\myblog\csmasterway.github.io\images\blog\uid871732-20200303-1583220161661.png)
+![图片描述](https://wendaocsmaster.github.io/images/blog/uid871732-20200303-1583220161661.png)
 
 这个 .profile 只对当前用户永久生效。因为它保存在当前用户的 Home 目录下，当切换用户时，工作目录可能一并被切换到对应的目录中，这个文件就无法生效。而写在 `/etc/profile` 里面的是对所有用户永久生效，所以如果想要添加一个永久生效的环境变量，只需要打开 `/etc/profile`，在最后加上你想添加的环境变量就好啦。
 
@@ -177,7 +177,7 @@ cd mybin
 ./hello_world
 ```
 
-![此处输入图片的描述](E:\myblog\csmasterway.github.io\images\blog\document-uid735639labid60timestamp1532339433567.png)
+![此处输入图片的描述](https://wendaocsmaster.github.io/images/blog/document-uid735639labid60timestamp1532339433567.png)
 
 回到上一级目录，也就是 `shiyanlou` 家目录，当再想运行那两个程序时，会发现提示命令找不到，除非加上命令的完整路径，但那样很不方便，如何做到像使用系统命令一样执行自己创建的脚本文件或者程序呢？那就要将命令所在路径添加到 `PATH` 环境变量了。
 
@@ -195,7 +195,7 @@ PATH=$PATH:/home/shiyanlou/mybin
 
 在每个用户的 home 目录中有一个 Shell 每次启动时会默认执行一个配置脚本，以初始化环境，包括添加一些用户自定义环境变量等等。实验楼的环境使用的 Shell 是 zsh，它的配置文件是 `.zshrc`，相应的如果使用的 Shell 是 Bash，则配置文件为 `.bashrc`。它们在 `etc` 下还都有一个或多个全局的配置文件，不过我们一般只修改用户目录下的配置文件。Shell 的种类有很多，可以使用 `cat /etc/shells` 命令查看当前系统已安装的 Shell。
 
-![图片描述](E:\myblog\csmasterway.github.io\images\blog\uid871732-20200303-1583223324878.png)
+![图片描述](https://wendaocsmaster.github.io/images/blog/uid871732-20200303-1583223324878.png)
 
 我们可以简单地使用下面命令直接添加内容到 `.zshrc` 中：
 
@@ -232,7 +232,7 @@ mypath=${mypath%*/mybin}
 
 可以看到路径已经不存在了。
 
-![图片描述](E:\myblog\csmasterway.github.io\images\blog\uid871732-20200303-1583224278229.png)
+![图片描述](https://wendaocsmaster.github.io/images/blog/uid871732-20200303-1583224278229.png)
 
 #### 变量删除
 
@@ -242,7 +242,7 @@ mypath=${mypath%*/mybin}
 unset mypath
 ```
 
-![图片描述](E:\myblog\csmasterway.github.io\images\blog\uid871732-20200303-1583224422523.png)
+![图片描述](https://wendaocsmaster.github.io/images/blog/uid871732-20200303-1583224422523.png)
 
 ## 环境变量立即生效
 
@@ -259,7 +259,7 @@ source .zshrc
 . ./.zshrc
 ```
 
-![图片描述](E:\myblog\csmasterway.github.io\images\blog\uid871732-20200303-1583225164807.png)
+![图片描述](https://wendaocsmaster.github.io/images/blog/uid871732-20200303-1583225164807.png)
 
 在使用 `.` 的时候，需要注意与表示当前路径的那个点区分开。
 
