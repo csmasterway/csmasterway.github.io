@@ -80,6 +80,81 @@ ls -asSh
 
 其中小 s 为显示文件大小，大 S 为按文件大小排序，若需要知道如何按其它方式排序，可以使用 `man ls` 命令查询。
 
+## 变更文件里所有者
+
+切换到 lilei 用户，然后在 /home/lilei 目录新建一个文件，命名为 `iphone11`。
+
+```bash
+su - lilei
+pwd
+touch iphone11
+ls -alh iphone11
+```
+
+可见文件所有者是 lilei ：
+
+![图片描述](https://wendaocsmaster.github.io/images/blog/uid871732-20200302-1583148845314.png)
+
+现在切换回到 shiyanlou 用户，使用以下命令变更文件所有者为 shiyanlou。
+
+```bash
+# 需要切换到 shiyanlou 用户执行以下操作
+cd /home/lilei
+ls iphone11
+sudo chown shiyanlou iphone11
+```
+
+现在查看，发现文件所有者成功修改为 shiyanlou。
+
+![图片描述](https://wendaocsmaster.github.io/images/blog/uid871732-20200302-1583148964757.png)、
+
+## 修改文件权限
+
+如果你有一个自己的文件不想被其他用户读、写、执行，那么就需要对文件的权限做修改。文件的权限有两种表示方式：
+
+- 方式一：二进制数字表示
+
+![pic](https://doc.shiyanlou.com/linux_base/3-14.png)
+
+每个文件有三组固定的权限，分别对应拥有者，所属用户组，其他用户，**记住这个顺序是固定的**。文件的读写执行对应字母 `rwx`，以二进制表示就是 `111`，用十进制表示就是 `7`，对进制转换不熟悉的同学可以看看 [进制转换](https://baike.baidu.com/item/进制转换/3117222)。例如我们刚刚新建的文件 iphone11 的权限是 `rw-rw-rw-`，换成对应的十进制表示就是 666，这就表示这个文件的拥有者，所属用户组和其他用户具有读写权限，不具有执行权限。
+
+如果我要将文件 `iphone11` 的权限改为只有我自己可以用那么就可以用这个方法更改它的权限。
+
+为了演示，我先在文件里加点内容：
+
+```bash
+echo "echo \"hello shiyanlou\"" > iphone11
+```
+
+然后修改权限：
+
+```bash
+chmod 600 iphone11
+ls -alh iphone11
+```
+
+![图片描述](https://wendaocsmaster.github.io/images/blog/uid871732-20200302-1583149616295.png)
+
+切换到 lilei 用户，尝试写入和读取操作，可以看到 lilei 用户已经不能读写这个 iphone11 文件了：
+
+![图片描述](https://wendaocsmaster.github.io/images/blog/uid871732-20200302-1583149700161.png)
+
+- 方式二：加减赋值操作
+
+要完成上述实验相同的效果，你可以：
+
+```bash
+chmod go-rw iphone11
+```
+
+![图片描述](https://wendaocsmaster.github.io/images/blog/uid871732-20200302-1583150177369.png)
+
+`g`、`o` 还有 `u` 分别表示 group（用户组）、others（其他用户） 和 user（用户），`+` 和 `-` 分别表示增加和去掉相应的权限。
+
+#### `adduser` 和 `useradd` 的区别是什么
+
+答：`useradd` 只创建用户，不会创建用户密码和工作目录，创建完了需要使用 `passwd <username>` 去设置新用户的密码。`adduser` 在创建用户的同时，会创建工作目录和密码（提示你设置），做这一系列的操作。其实 `useradd`、`userdel` 这类操作更像是一种命令，执行完了就返回。而 `adduser` 更像是一种程序，需要你输入、确定等一系列操作。
+
 ## Reference
 
 https://www.lanqiao.cn/courses/1/learning/?id=3&compatibility=true
