@@ -114,7 +114,7 @@ sudo chown shiyanlou iphone11
 
 - 方式一：二进制数字表示
 
-![pic](https://doc.shiyanlou.com/linux_base/3-14.png)
+![pic](https://wendaocsmaster.github.io/images/blog/3-14.png)
 
 每个文件有三组固定的权限，分别对应拥有者，所属用户组，其他用户，**记住这个顺序是固定的**。文件的读写执行对应字母 `rwx`，以二进制表示就是 `111`，用十进制表示就是 `7`，对进制转换不熟悉的同学可以看看 [进制转换](https://baike.baidu.com/item/进制转换/3117222)。例如我们刚刚新建的文件 iphone11 的权限是 `rw-rw-rw-`，换成对应的十进制表示就是 666，这就表示这个文件的拥有者，所属用户组和其他用户具有读写权限，不具有执行权限。
 
