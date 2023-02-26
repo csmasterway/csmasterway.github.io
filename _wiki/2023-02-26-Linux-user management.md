@@ -16,7 +16,7 @@ who am i
 who mom lisks
 ~~~
 
-![3-2.1-1](E:\myblog\csmasterway.github.io\images\blog\document-uid735639labid3timestamp1531731170296.png)
+![3-2.1-1](https://wendaocsmaster.github.io/images/blog/image-20230225103214468.pngdocument-uid735639labid3timestamp1531731170296.png)
 
 输出的第一列表示打开当前伪终端的用户的用户名（要查看当前登录用户的用户名，去掉空格直接使用 `whoami` 即可），第二列的 `pts/0` 中 `pts` 表示伪终端，所谓伪是相对于 `/dev/tty` 设备而言的，终端本质上是对应着 Linux 上的 /dev/tty 设备，Linux 的多用户登录就是通过不同的 /dev/tty 设备完成的，Linux 默认提供了 6 个纯命令行界面的 “terminal”（准确的说这里应该是 6 个 virtual consoles）来让用户登录。在物理机系统上你可以通过使用`[Ctrl]`+`[Alt]`+`[F1]～[F6]`进行切换，当切换到其中一个终端后想要切换回图形面,可以按下`[Ctrl]`+`[Alt]`+`[F7]`来完成。
 
@@ -24,7 +24,7 @@ who mom lisks
 
 例如在本地的 Ubuntu 系统上输入这个命令就不会有提示。
 
-![图片描述](E:\myblog\csmasterway.github.io\images\blog\uid871732-20200302-1583140204433.png)
+![图片描述](https://wendaocsmaster.github.io/images/blog/image-20230225103214468.pnguid871732-20200302-1583140204433.png)
 
 `who` 命令其它常用参数
 
@@ -55,7 +55,7 @@ sudo adduser lilei
 
 实验楼的环境目前设置为 shiyanlou 用户执行 sudo 不需要输入密码，通常此处需要按照提示输入 shiyanlou 密码（**Linux 下密码输入是不显示任何内容的，shiyanlou 用户密码可以在右侧环境信息里查看，请勿自行设置密码**）。然后是给 lilei 用户设置密码，后面的选项的一些内容你可以选择直接回车使用默认值。
 
-![3-2.2-1](E:\myblog\csmasterway.github.io\images\blog\document-uid735639labid3timestamp1531731216215.png)
+![3-2.2-1](https://wendaocsmaster.github.io/images/blog/image-20230225103214468.pngdocument-uid735639labid3timestamp1531731216215.png)
 
 这个命令不但可以添加用户到系统，同时也会默认为新用户在 /home 目录下创建一个工作目录：
 
@@ -63,7 +63,7 @@ sudo adduser lilei
 ls /home
 ```
 
-![图片描述](E:\myblog\csmasterway.github.io\images\blog\uid871732-20200302-1583141675216.png)
+![图片描述](https://wendaocsmaster.github.io/images/blog/image-20230225103214468.pnguid871732-20200302-1583141675216.png)
 
 现在你已经创建好一个用户，并且你可以使用你创建的用户登录了，使用如下命令切换登录用户：
 
@@ -79,13 +79,13 @@ whoami
 pwd
 ```
 
-![图片描述](E:\myblog\csmasterway.github.io\images\blog\uid871732-20200302-1583142076115.png)
+![图片描述](https://wendaocsmaster.github.io/images/blog/image-20230225103214468.pnguid871732-20200302-1583142076115.png)
 
 你发现了区别了吗？这就是上一小节我们讲到的 `who am i` 和 `whoami` 命令的区别。
 
 退出当前用户跟退出终端一样，可以使用 `exit` 命令或者使用快捷键 `Ctrl+D`。
 
-![图片描述](E:\myblog\csmasterway.github.io\images\blog\uid871732-20200302-1583142261959.png)
+![图片描述](https://wendaocsmaster.github.io/images/blog/image-20230225103214468.pnguid871732-20200302-1583142261959.png)
 
 ## 用户组
 
@@ -99,13 +99,13 @@ pwd
 groups shiyanlou
 ```
 
-![此处输入图片的描述](E:\myblog\csmasterway.github.io\images\blog\document-uid13labid3timestamp1454035714557.jpeg)
+![此处输入图片的描述](https://wendaocsmaster.github.io/images/blog/image-20230225103214468.pngdocument-uid13labid3timestamp1454035714557.jpeg)
 
 其中冒号之前表示用户，后面表示该用户所属的用户组。这里可以看到 shiyanlou 用户属于 shiyanlou 用户组，每次新建用户如果不指定用户组的话，默认会自动创建一个与用户名相同的用户组（差不多就相当于家长的意思）。
 
 默认情况下在 sudo 用户组里的可以使用 sudo 命令获得 root 权限。shiyanlou 用户也可以使用 sudo 命令，为什么这里没有显示在 sudo 用户组里呢？可以查看下 `/etc/sudoers.d/shiyanlou` 文件，我们在 `/etc/sudoers.d` 目录下创建了这个文件，从而给 shiyanlou 用户赋予了 sudo 权限：
 
-![此处输入图片的描述](E:\myblog\csmasterway.github.io\images\blog\document-uid13labid3timestamp1454035855554.jpeg)
+![此处输入图片的描述](https://wendaocsmaster.github.io/images/blog/image-20230225103214468.pngdocument-uid13labid3timestamp1454035855554.jpeg)
 
 #### 方法二：查看 `/etc/group` 文件
 
@@ -115,7 +115,7 @@ cat /etc/group | sort
 
 这里 `cat` 命令用于读取指定文件的内容并打印到终端输出，后面会详细讲它的使用。 `| sort` 表示将读取的文本进行一个字典排序再输出，然后你将看到如下一堆输出，你可以在最下面看到 shiyanlou 的用户组信息：
 
-![3-2.3-3](E:\myblog\csmasterway.github.io\images\blog\document-uid735639labid3timestamp1531731335264.png)
+![3-2.3-3](https://wendaocsmaster.github.io/images/blog/image-20230225103214468.pngdocument-uid735639labid3timestamp1531731335264.png)
 
 没找到？没关系，你可以使用 `grep` 命令过滤掉一些你不想看到的结果：
 
@@ -123,7 +123,7 @@ cat /etc/group | sort
 cat /etc/group | grep -E "shiyanlou"
 ```
 
-![此处输入图片的描述](E:\myblog\csmasterway.github.io\images\blog\document-uid13labid3timestamp1454035698068.jpeg)
+![此处输入图片的描述](https://wendaocsmaster.github.io/images/blog/image-20230225103214468.pngdocument-uid13labid3timestamp1454035698068.jpeg)
 
 ##### `/etc/group` 文件格式说明
 
@@ -145,7 +145,7 @@ su -l lilei
 sudo ls
 ```
 
-![图片描述](E:\myblog\csmasterway.github.io\images\blog\uid871732-20200302-1583145040679.png)
+![图片描述](https://wendaocsmaster.github.io/images/blog/image-20230225103214468.pnguid871732-20200302-1583145040679.png)
 
 会提示 lilei 不在 sudoers 文件中，意思就是 lilei 不在 sudo 用户组中，至于 sudoers 文件（/etc/sudoers）你现在最好不要动它，操作不慎会导致比较麻烦的后果。
 
@@ -165,11 +165,11 @@ sudo usermod -G sudo lilei
 groups lilei
 ```
 
-![图片描述](E:\myblog\csmasterway.github.io\images\blog\uid871732-20200302-1583145514469.png)
+![图片描述](https://wendaocsmaster.github.io/images/blog/image-20230225103214468.pnguid871732-20200302-1583145514469.png)
 
 然后你再切换回 lilei 用户，现在就可以使用 sudo 获取 root 权限了。
 
-![图片描述](E:\myblog\csmasterway.github.io\images\blog\uid871732-20200302-1583145591124.png)
+![图片描述](https://wendaocsmaster.github.io/images/blog/image-20230225103214468.pnguid871732-20200302-1583145591124.png)
 
 删除用户是很简单的事：
 
@@ -177,11 +177,11 @@ groups lilei
 sudo deluser lilei --remove-home
 ```
 
-![3-2.4-1](E:\myblog\csmasterway.github.io\images\blog\document-uid735639labid3timestamp1531731417990.png)
+![3-2.4-1](https://wendaocsmaster.github.io/images/blog/image-20230225103214468.pngdocument-uid735639labid3timestamp1531731417990.png)
 
 使用 `--remove-home` 参数在删除用户时候会一并将该用户的工作目录一并删除。如果不使用那么系统会自动在 /home 目录为该用户保留工作目录。
 
-![图片描述](E:\myblog\csmasterway.github.io\images\blog\uid871732-20200302-1583146790310.png)
+![图片描述](https://wendaocsmaster.github.io/images/blog/image-20230225103214468.pnguid871732-20200302-1583146790310.png)
 
 删除用户组可以使用 `groupdel` 命令，倘若该群组中仍包括某些用户，则必须先删除这些用户后，才能删除群组。
 
