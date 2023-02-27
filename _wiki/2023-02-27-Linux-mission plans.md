@@ -45,7 +45,7 @@ sudo apt-get install -y rsyslog
 sudo service rsyslog start
 ```
 
-![service-rsyslog-start](E:\myblog\csmasterway.github.io\images\blog\1135081468201394787.png)
+![service-rsyslog-start](https://wendaocsmaster.github.io/images/blog/1135081468201394787.png)
 
 在本实验环境中 crontab 也是不被默认启动的，同时不能在后台由 upstart 来管理，所以需要我们来启动它:
 
@@ -53,7 +53,7 @@ sudo service rsyslog start
 sudo cron －f &
 ```
 
-![此处输入图片的描述](E:\myblog\csmasterway.github.io\images\blog\document-uid600404labid6124timestamp1523941816405.png)
+![此处输入图片的描述](https://wendaocsmaster.github.io/images/blog/document-uid600404labid6124timestamp1523941816405.png)
 
 下面将开始 crontab 的使用了，我们通过下面一个命令来添加一个计划任务：
 
@@ -63,11 +63,11 @@ crontab -e
 
 第一次启动会出现这样一个画面，这是让我们选择编辑的工具，选择第二个基本的 vim 就可以了。
 
-![此处输入图片的描述](E:\myblog\csmasterway.github.io\images\blog\document-uid600404labid6124timestamp1523941985569.png)
+![此处输入图片的描述](https://wendaocsmaster.github.io/images/blog/document-uid600404labid6124timestamp1523941985569.png)
 
 而选择后我们会进入这样一个画面，这就是添加计划的地方了，与一般的配置文档相同，以#号开头的都是注释，通过文档的最后一排我们可以猜猜 crontab 的格式是什么样的呢？
 
-![实验楼](E:\myblog\csmasterway.github.io\images\blog\1135081468202029108.png)
+![实验楼](https://wendaocsmaster.github.io/images/blog/1135081468202029108.png)
 
 详细的格式可以使用上一节中学习到的 man 命令查看：
 
@@ -87,7 +87,7 @@ man crontab
 
 添加成功后我们会得到最后一排 installing new crontab 的一个提示：
 
-![实验楼](E:\myblog\csmasterway.github.io\images\blog\1135081468203483143.png)
+![实验楼](https://wendaocsmaster.github.io/images/blog/1135081468203483143.png)
 
 当然我们也可以通过这样的一个指令来查看我们添加了哪些任务：
 
@@ -97,7 +97,7 @@ crontab -l
 
 通过图中的显示，我们也可以看出，我们正确的保存并且添加成功了该任务的：
 
-![实验楼](E:\myblog\csmasterway.github.io\images\blog\1135081468204230683.png)
+![实验楼](https://wendaocsmaster.github.io/images/blog/1135081468204230683.png)
 
 虽然我们添加了任务，但是如果 `cron` 的守护进程并没有启动，它根本都不会监测到有任务，当然也就不会帮我们执行，我们可以通过以下 2 种方式来确定我们的 `cron` 是否成功的在后台启动，默默的帮我们做事，若是没有就得执行上文准备中的第二步了。
 
@@ -109,11 +109,11 @@ ps aux | grep cron
 pgrep cron
 ```
 
-![此处输入图片的描述](E:\myblog\csmasterway.github.io\images\blog\document-uid600404labid6124timestamp1523942683532.png)
+![此处输入图片的描述](https://wendaocsmaster.github.io/images/blog/document-uid600404labid6124timestamp1523942683532.png)
 
 通过下图可以看到任务在创建之后，执行了几次，生成了一些文件，且每分钟生成一个：
 
-![此处输入图片的描述](E:\myblog\csmasterway.github.io\images\blog\document-uid600404labid6124timestamp1523943532369.png)
+![此处输入图片的描述](https://wendaocsmaster.github.io/images/blog/document-uid600404labid6124timestamp1523943532369.png)
 
 我们通过这样一个命令可以查看到执行任务命令之后在日志中的信息反馈：
 
@@ -123,7 +123,7 @@ sudo tail -f /var/log/syslog
 
 从图中我们可以看到分别在 13 点 28、29、30 分的 01 秒为我们在 shiyanlou 用户的家目录下创建了文件。
 
-![此处输入图片的描述](E:\myblog\csmasterway.github.io\images\blog\document-uid600404labid6124timestamp1523943327065.png)
+![此处输入图片的描述](https://wendaocsmaster.github.io/images/blog/document-uid600404labid6124timestamp1523943327065.png)
 
 当我们并不需要这个任务的时候我们可以使用这么一个命令去删除任务：
 
@@ -133,11 +133,11 @@ crontab -r
 
 通过图中我们可以看出我们删除之后再查看任务列表，系统已经显示该用户并没有任务哦。
 
-![此处输入图片的描述](E:\myblog\csmasterway.github.io\images\blog\document-uid600404labid6124timestamp1523943647348.png)
+![此处输入图片的描述](https://wendaocsmaster.github.io/images/blog/document-uid600404labid6124timestamp1523943647348.png)
 
 每个用户使用 `crontab -e` 添加计划任务，都会在 `/var/spool/cron/crontabs` 中添加一个该用户自己的任务文档，这样目的是为了隔离。
 
-![实验楼](E:\myblog\csmasterway.github.io\images\blog\1135081468206283987.png)
+![实验楼](https://wendaocsmaster.github.io/images/blog/1135081468206283987.png)
 
 如果是系统级别的定时任务，需要 root 权限执行的任务应该怎么处理？
 
@@ -147,7 +147,7 @@ crontab -r
 
 在 `/etc` 目录下，`cron` 相关的目录有下面几个：
 
-![实验楼](E:\myblog\csmasterway.github.io\images\blog\1135081468206856712.png)
+![实验楼](https://wendaocsmaster.github.io/images/blog/1135081468206856712.png)
 
 每个目录的作用：
 
