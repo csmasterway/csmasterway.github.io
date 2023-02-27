@@ -59,7 +59,7 @@ du -h -d 0 *.zip ~ | sort
 - `-h`， --human-readable（顾名思义，你可以试试不加的情况）
 - `-d`， --max-depth（所查看文件的深度）
 
-![图片描述](E:\myblog\csmasterway.github.io\images\blog\uid600404-20190428-1556438181236.jpeg)
+![图片描述](https://wendaocsmaster.github.io/images/blog/uid600404-20190428-1556438181236.jpeg)
 
 这样一目了然，理论上来说默认压缩级别应该是最高的，但是由于文件不大，这里的差异不明显（几乎看不出差别），不过你在环境中操作之后看到的压缩文件大小可能跟图上的有些不同，因为系统在使用过程中，会随时生成一些缓存文件在当前用户的家目录中，这对于我们学习命令使用来说，是无关紧要的，可以忽略这些不同。
 
@@ -155,7 +155,7 @@ tar -czf shiyanlou.tar.gz /home/shiyanlou/Desktop
 tar -xzf shiyanlou.tar.gz
 ```
 
-![此处输入图片的描述](E:\myblog\csmasterway.github.io\images\blog\document-uid735639labid61timestamp1532339561961.png)
+![此处输入图片的描述](https://wendaocsmaster.github.io/images/blog/document-uid735639labid61timestamp1532339561961.png)
 
 现在我们要使用其它的压缩工具创建或解压相应文件只需要更改一个参数即可：
 
