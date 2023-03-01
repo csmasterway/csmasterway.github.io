@@ -32,7 +32,7 @@ keywords: Operating system
 
    
 
-   但是此时的操作系统对于各应用程序的支持仍然是各程序按照加载到内存中的顺序来执行。为了进一步提高系统的任务吞吐量和CPU利用率有了多道批处理系统，使得各应用程序能够交替使用CPU，此时的操作系统就是装载器、程序调度、内存管理和输出管理的集合。
+   但是此时的操作系统对于各应用程序的支持仍然是各程序按照加载到内存中的顺序来执行，内存中同一时刻仅允许有一个程序，为了进一步提高系统的任务吞吐量和CPU利用率有了多道批处理系统，同一时刻在内存中有多个程序，使得各应用程序能够交替使用CPU，此时的操作系统就是装载器、程序调度、内存管理和输出管理的集合。
 
    <img src="https://wendaocsmaster.github.io/images/blog/image-20230301081020636.png" alt="image-20230301081020636" style="zoom: 30%;" />
 
@@ -101,6 +101,8 @@ keywords: Operating system
 [lab-rCore-Tutorial-Book-v3 3.6.0-alpha.1 文档 (rcore-os.cn)](http://rcore-os.cn/rCore-Tutorial-Book-v3/index.html)
 
 [Introduction · GitBook (learningos.github.io)2020](https://learningos.github.io/ucore_os_webdocs/)
+
+[ucore-os-docs](https://github.com/csmasterpath/ucore_os_docs)
 
 [Operating Systems: Three Easy Pieces (wisc.edu)](https://pages.cs.wisc.edu/~remzi/OSTEP/)
 
