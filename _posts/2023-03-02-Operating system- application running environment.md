@@ -107,9 +107,9 @@ int main()
 
 + 汇编`gcc -c test.s -o test.o`，生成目标代码
 
-  汇编器输出的每个目标文件都有一个独立的[程序内存布局]((https://wendaocsmaster.github.io/2023/03/02/Operating-system-program-memory-layout/))，描述了目标文件内各段的所在位置
+  汇编器输出的每个目标文件都有一个独立的[程序内存布局](https://wendaocsmaster.github.io/2023/03/02/Operating-system-program-memory-layout/)，描述了目标文件内各段的所在位置
 
-  ![../_images/link-sections.png](E:\myblog\csmasterway.github.io\images\blog\link-sections.png)
+  ![../_images/link-sections.png](https://wendaocsmaster.github.io/images/blog/link-sections.png)
 
 + 链接器将目标代码连接为可执行文件`gcc test.o -o test`
 
