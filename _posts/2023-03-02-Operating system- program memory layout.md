@@ -11,10 +11,10 @@ keywords: Operating system
 ![../_images/MemoryLayout.png](https://wendaocsmaster.github.io/images/blog/MemoryLayout.png)
 
 + .text：代码段
-+ .rodata：只读的数据
-+ .data：可修改的全局数据
-+ .bss：未初始化的全局数据 block started by symbol
-+ head：动态分配内存的数据，向高地址增长
++ .rodata：只读的数据 静态内存分配
++ .data：可修改的全局变量 静态内存分配
++ .bss：未初始化的全局变量 block started by symbol 静态内存分配
++ heap：动态分配内存的数据，向高地址增长 典型使用方式就是C中的malloc和free
 + stack：局部变量数据，向低地址增长
 
 ## 参考资料

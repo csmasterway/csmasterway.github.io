@@ -8,43 +8,49 @@ keywords: Operating system
 
 ## 一次完整的计算机上电启动过程
 
-1. 计算机上电后CPU的PC寄存器被设置为计算机内部只读寄存器ROM的物理地址，随后CPU开始运行ROM中的软件，对CPU进行初始化，并加载操作系统引导程序bootloader，随后跳转到bootloader的程序中
-2. bootloader同样对CPU进行一些初始化工作，将操作系统镜像加载到物理内存中，随后跳转到适当地址将计算机控制权交给操作系统
+### 真实计算机
+
+1. ROM stage：计算机上电后CPU的PC寄存器的值被设置为ROM的物理地址，并且运行ROM内的软件（一般叫做固件 firmware），对CPU进行一些初始化工作，将后续需要的bootloader的代码和数据加载到物理内存中，这一截断直接在ROM中运行。
+2. RAM stage：检测并初始化CPU、以及主板等，这一阶段在RAM上运行。
+3. BootLoader stage：在内存中找到bootloader并执行bootloader的指令，完成对CPU的一些初始化工作，将操作系统镜像从硬盘加载到物理内存中，随后跳转将计算机的控制权转交给操作系统。这一阶段计算机的控制权属于bootloader
+4. OS stage：这一截断由操作系统控制计算机。
 
 综上计算机的一次完整的启动过程伴随着计算机控制权的转移
 
 ROM->BOOTLOADER->OS
 
-以QEMU和最简单的LibOS为例:QEMU将
+### QEMU
 
-![LibOS总体结构](https://wendaocsmaster.github.io/images/blog/lib-os-detail.png)
+>QEMU中ROM和SBI功能简单，没有能力负责加载bootloader和OS镜像，他们是在QEMU启动之前就被加载到QEMU的内存中的
 
-QEMU的内存空间布局如下
++ QEMU的内存空间布局如下,QEMU接电后将必要文件加载到内存中，包括bootloader和内核镜像，将bootloader放到QEMU物理内存地址`0x8000 0000`处，内核镜像文件放在`0x8020 0000`处
 
-~~~C
-static const struct MemmapEntry {
-    hwaddr base;
-    hwaddr size;
-} virt_memmap[] = {
-    [VIRT_DEBUG] =       {        0x0,         0x100 },
-    [VIRT_MROM] =        {     0x1000,       0x11000 },//启动 ROM
-    [VIRT_TEST] =        {   0x100000,        0x1000 },
-    [VIRT_RTC] =         {   0x101000,        0x1000 },
-    [VIRT_CLINT] =       {  0x2000000,       0x10000 },
-    [VIRT_PLIC] =        {  0xc000000,     0x4000000 },
-    [VIRT_UART0] =       { 0x10000000,         0x100 },//UART 串口
-    [VIRT_VIRTIO] =      { 0x10001000,        0x1000 },
-    [VIRT_FLASH] =       { 0x20000000,     0x4000000 },
-    [VIRT_DRAM] =        { 0x80000000,           0x0 },//设备内存
-    [VIRT_PCIE_MMIO] =   { 0x40000000,    0x40000000 },
-    [VIRT_PCIE_PIO] =    { 0x03000000,    0x00010000 },
-    [VIRT_PCIE_ECAM] =   { 0x30000000,    0x10000000 },
-};
-~~~
+    > 内核镜像文件与可执行文件是不一样的，可执行文件包括了一些文件符号信息，而内核镜像是纯二进制指令，内核镜像由可执行文件进一步处理得到
+    
+    ~~~C
+    static const struct MemmapEntry {
+        hwaddr base;
+        hwaddr size;
+    } virt_memmap[] = {
+        [VIRT_DEBUG] =       {        0x0,         0x100 },
+        [VIRT_MROM] =        {     0x1000,       0x11000 },//启动 ROM
+        [VIRT_TEST] =        {   0x100000,        0x1000 },
+        [VIRT_RTC] =         {   0x101000,        0x1000 },
+        [VIRT_CLINT] =       {  0x2000000,       0x10000 },
+        [VIRT_PLIC] =        {  0xc000000,     0x4000000 },
+        [VIRT_UART0] =       { 0x10000000,         0x100 },//UART 串口
+        [VIRT_VIRTIO] =      { 0x10001000,        0x1000 },
+        [VIRT_FLASH] =       { 0x20000000,     0x4000000 },
+        [VIRT_DRAM] =        { 0x80000000,           0x0 },//设备内存
+        [VIRT_PCIE_MMIO] =   { 0x40000000,    0x40000000 },
+        [VIRT_PCIE_PIO] =    { 0x03000000,    0x00010000 },
+        [VIRT_PCIE_ECAM] =   { 0x30000000,    0x10000000 },
+    };
+    ~~~
 
 
 
-+ 物理内存的起始物理地址为`0x8000 0000`, 在计算机接电后，CPU的程序计数器PC会被初始化为`0x1000` 由固化在 [QEMU模拟的计算机内存](https://github.com/LearningOS/qemu/blob/386b2a5767f7642521cd07930c681ec8a6057e60/hw/riscv/virt.c#L59)中的[一小段汇编程序](https://github.com/LearningOS/qemu/blob/386b2a5767f7642521cd07930c681ec8a6057e60/hw/riscv/virt.c#L536)初始化并跳转执行bootloader，其起始地址为`0x8000 0000`
++  CPU的程序计数器PC会被初始化为`0x1000` 由固化在 [QEMU模拟的计算机内存](https://github.com/LearningOS/qemu/blob/386b2a5767f7642521cd07930c681ec8a6057e60/hw/riscv/virt.c#L59)中的[一小段汇编程序](https://github.com/LearningOS/qemu/blob/386b2a5767f7642521cd07930c681ec8a6057e60/hw/riscv/virt.c#L536)初始化并跳转执行bootloader，其起始地址为`0x8000 0000`
 
   以下代码就是被写入ROM中的程序
 
@@ -68,7 +74,7 @@ static const struct MemmapEntry {
 
   
 
-+ bootloader的bin文件放置在进入地址`0x8000 0000`后面对的是bootloader的第一条指令，对计算机进行一些初始化工作
++ bootloader的bin文件放置在进入地址`0x8000 0000`后面对的是bootloader的第一条指令，对计算机进行一些初始化工作，然后跳转到内核镜像地址`0x8020 0000`
 
 ![image-20230303200618017](https://wendaocsmaster.github.io/images/blog/image-20230303200618017.png)
 
