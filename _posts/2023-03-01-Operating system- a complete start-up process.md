@@ -55,21 +55,27 @@ ROM->BOOTLOADER->OS
   以下代码就是被写入ROM中的程序
 
   ~~~C
-  uint32_t reset_vec[8] = {
-          0x00000297,                  /* 1:  auipc  t0, %pcrel_hi(dtb) */
-          0x02028593,                  /*     addi   a1, t0, %pcrel_lo(1b) */
+   uint32_t reset_vec[10] = {
+          0x00000297,                  /* 1:  auipc  t0, %pcrel_hi(fw_dyn) */
+          0x02828613,                  /*     addi   a2, t0, %pcrel_lo(1b) */
           0xf1402573,                  /*     csrr   a0, mhartid  */
-  #if defined(TARGET_RISCV32)
-          0x0182a283,                  /*     lw     t0, 24(t0) */
-  #elif defined(TARGET_RISCV64)
-          0x0182b283,                  /*     ld     t0, 24(t0) */
-  #endif
+          0,
+          0,
           0x00028067,                  /*     jr     t0 */
-          0x00000000,
           start_addr,                  /* start: .dword */
+          start_addr_hi32,
+          fdt_load_addr,               /* fdt_laddr: .dword */
           0x00000000,
-                                       /* dtb: */
+                                       /* fw_dyn: */
       };
+      if (riscv_is_32bit(harts)) {
+          reset_vec[3] = 0x0202a583;   /*     lw     a1, 32(t0) */
+          reset_vec[4] = 0x0182a283;   /*     lw     t0, 24(t0) */
+      } else {
+          reset_vec[3] = 0x0202b583;   /*     ld     a1, 32(t0) */
+          reset_vec[4] = 0x0182b283;   /*     ld     t0, 24(t0) */
+      }
+  
   ~~~
 
   
@@ -100,7 +106,7 @@ riscv64-unknown-elf-gdb \
     -ex 'target remote localhost:1234'
 ~~~
 
-对指令进行反汇编,可以看到QEMU的固件中共有5条指令
+对指令进行反汇编,可以看到QEMU的固件中共有5条指令,当数据为 0 的时候则会被反汇编为 `unimp` 指令。
 
 ```asm
 (gdb) x/10i $pc
@@ -164,7 +170,37 @@ riscv64-unknown-elf-gdb \
 
 + `ld a1,32(t0)`
 
+  从t0+32的内存中加载4B数据到a1,即从`0x1000 + 32 = 0x1020`中读取连续四字节内容存入a1寄存器，这里需要注意riscv是小端架构，因此实际存入a1的数据是`0x1023 0x1022 0x1021 0x1020`中的数据
+
+  使用gdb查看这些位置的数据，以及寄存器a1中的数据
+
+  ~~~
+  (gdb) x/4bx 0x1020
+  0x1020: 0x00    0x00    0x00    0x87
+  (gdb) x/1bx 0x1023
+  0x1023: 0x87
+  (gdb) x/1wx 0x1020
+  0x1020: 0x87000000
+  (gdb) p/x $a1
+  $6 = 0x87000000
+  ~~~
+
 + `ld t0,24(t0)`
+
+  从t0+32的内存中加载4B数据到t0，即从`0x1000 + 24 = 0x1018`中读取连续四字节内容存入a1寄存器，这里需要注意riscv是小端架构，因此实际存入a1的数据是`0x101b 0x101a 0x1019 0x1018`中的数据
+
+  使用gdb查看这些位置的数据，以及寄存器t0中的数据
+
+  ~~~
+  (gdb) x/4bx 0x1018    
+  0x1018: 0x00    0x00    0x00    0x80
+  (gdb) x/1bx 0x101b
+  0x101b: 0x80
+  (gdb) x/1wx 0x1018
+  0x1018: 0x80000000
+  (gdb) p/x $t0
+  $14 = 0x80000000
+  ~~~
 
 + `jr t0`
 
