@@ -164,10 +164,7 @@ riscv64-unknown-elf-gdb \
 
 + `ld a1,32(t0)`
 
-  <font color =red>从地址rs1+imm[11:0]出加载4个字节的数据到寄存器rd
-  $a1 = [4bytes@0x1020]
-  0x1010: ld t0,24(t0)
-  $t0 = [4bytes@1018] 这里是1018出开始加载4个字节，小端内存序，所以寄存器中的数据应该是0x8000_0000</font>
++ `ld t0,24(t0)`
 
 + `jr t0`
 
