@@ -50,7 +50,7 @@ ROM->BOOTLOADER->OS
 
 
 
-+  CPU的程序计数器PC会被初始化为`0x1000` 由固化在 [QEMU模拟的计算机内存](https://github.com/LearningOS/qemu/blob/386b2a5767f7642521cd07930c681ec8a6057e60/hw/riscv/virt.c#L59)中的[一小段汇编程序](https://github.com/LearningOS/qemu/blob/386b2a5767f7642521cd07930c681ec8a6057e60/hw/riscv/virt.c#L536)初始化并跳转执行bootloader，其起始地址为`0x8000 0000`
++ CPU的程序计数器PC会被初始化为`0x1000` 由固化在 [QEMU模拟的计算机内存](https://github.com/LearningOS/qemu/blob/386b2a5767f7642521cd07930c681ec8a6057e60/hw/riscv/virt.c#L59)中的[一小段汇编程序](https://github.com/LearningOS/qemu/blob/386b2a5767f7642521cd07930c681ec8a6057e60/hw/riscv/virt.c#L536)初始化并跳转执行bootloader，其起始地址为`0x8000 0000`
 
   以下代码就是被写入ROM中的程序
 
@@ -77,6 +77,101 @@ ROM->BOOTLOADER->OS
 + bootloader的bin文件放置在进入地址`0x8000 0000`后面对的是bootloader的第一条指令，对计算机进行一些初始化工作，然后跳转到内核镜像地址`0x8020 0000`
 
 ![image-20230303200618017](https://wendaocsmaster.github.io/images/blog/image-20230303200618017.png)
+
+## 调试启动过程
+
+启动QEMU并加载SBI以及内核镜像
+
+~~~
+qemu-system-riscv64 \
+    -machine virt \
+    -nographic \
+    -bios ../bootloader/rustsbi-qemu.bin \
+    -device loader,file=target/riscv64gc-unknown-none-elf/release/os.bin,addr=0x80200000 \
+    -s -S
+~~~
+
+在另一个终端中输入
+
+~~~、
+riscv64-unknown-elf-gdb \
+    -ex 'file target/riscv64gc-unknown-none-elf/release/os' \
+    -ex 'set arch riscv:rv64' \
+    -ex 'target remote localhost:1234'
+~~~
+
+对指令进行反汇编,可以看到QEMU的固件中共有5条指令
+
+```asm
+(gdb) x/10i $pc
+=> 0x1000:      auipc   t0,0x0
+   0x1004:      addi    a2,t0,40
+   0x1008:      csrr    a0,mhartid
+   0x100c:      ld      a1,32(t0)
+   0x1010:      ld      t0,24(t0)
+   0x1014:      jr      t0
+   0x1018:      unimp
+   0x101a:      0x8000
+   0x101c:      unimp
+   0x101e:      unimp
+
+```
+
++ `AUIPC t0,0x0`
+
+  Add Upper Immediate PC: rd = pc + imm[31:12]
+
+  ![image-20230305084618770](https://wendaocsmaster.github.io/images/blog/image-20230305084618770.png)
+
+  对当前PC的值和立即数0x0值得高20位相加后保存到寄存器`t0`,可以看到立寄存器的值为4096
+
+  ~~~asm
+  (gdb) si
+  0x0000000000001004 in ?? ()
+  (gdb) p $t0
+  $1 = 4096
+  ~~~
+
++ `ADDI a2,t0,40`
+
+  ADD Immeiate: rd = rs1 + imm[11:0]
+
+  ![image-20230305085957941](https://wendaocsmaster.github.io/images/blog/image-20230305085957941.png)
+
+  将t0与40相加符号扩展的12位立即数加到寄存器a2
+
+  ~~~
+  (gdb) si   
+  0x0000000000001008 in ?? ()
+  (gdb) p $a2
+  $4 = 4136
+  ~~~
+
++ `csrr a0,mhartid`
+
+  Control State Register Read: a0 = mhartid
+
+  ![image-20230305092025012](https://wendaocsmaster.github.io/images/blog/image-20230305092025012.png)
+
+  ![image-20230305091940893](https://wendaocsmaster.github.io/images/blog/image-20230305091940893.png)
+
+  从mhartid中读出经过0扩展后写入a0
+
+  ~~~
+  0x000000000000100c in ?? ()
+  (gdb) p $a0
+  ~~~
+
++ `ld a1,32(t0)`
+
+  <font color =red>从地址rs1+imm[11:0]出加载4个字节的数据到寄存器rd
+  $a1 = [4bytes@0x1020]
+  0x1010: ld t0,24(t0)
+  $t0 = [4bytes@1018] 这里是1018出开始加载4个字节，小端内存序，所以寄存器中的数据应该是0x8000_0000</font>
+
++ `jr t0`
+
+  跳转到t0中的地址即`0x8000 0000`进入bootloader
 
 ## 参考资料
 
