@@ -38,6 +38,44 @@ What will happen if a malicious miner transfers some Bitcoins to others and issu
 
 What will happen if a selfish miner finds a new next block but it doesn't issue, and it extends the chain along with the current block?  In the whole system, others don't know the current block except itself, so others extend the chain along with the origin chain. Assume the following situation, others find a new block but the miner finds two blocks and issued them together, which will make the block found by others invalid because the Bitcoin system is designed to extend along with the longest legal chain. In this way , the competition can be reduced to a certain extent, called selfish mining. But the key to success is that the miner possesses enough power. If a malicious miner finds a new block but doesn't issue it, others also find a new block and issue it before the malicious miner, the miner will lose block rewards.
 
+
+
+## AI modified
+
+Title: An Account's Balance in the Bitcoin System
+
+Abstract: This article aims to explain how account balances are managed in the Bitcoin system, which is based on blockchain technology.
+
+Introduction: The Bitcoin system is built on blockchain technology, which enables a decentralized and secure ledger for transactions. In the Bitcoin system, each account has a balance which reflects the amount of Bitcoin that the account holds. The balance is determined by the account's history of transactions on the blockchain.
+
+Account Balance Management in Bitcoin: To understand how account balances are managed in the Bitcoin system, let's look at the process of a transaction. When a user sends Bitcoin to another user, the transaction is recorded on the blockchain as a block, which contains all of the transaction details. Each block is verified by nodes on the network, and once verified, it becomes a part of the blockchain ledger. The account balances of both the sender and receiver are then updated to reflect the new transaction.
+
+Each transaction includes inputs and outputs. Inputs refer to the sender's available bitcoins, and outputs refer to the recipient's received bitcoins. A transaction can have multiple inputs and outputs, and the difference between the input and output values is considered the transaction fee. Transaction fees are collected by miners who validate the transactions and add them to the blockchain.
+
+Bitcoin wallets are used by users to store their bitcoins and manage their account balances. The wallet software tracks the account's balance by analyzing transaction history and calculating the current balance. The wallet also keeps track of the private keys that are used to sign transactions.
+
+Security Measures: The Bitcoin system uses several security measures to prevent fraud and protect user funds. The first measure is the use of public and private keys, which ensure that only the account owner can approve transactions. A second measure is the use of hashing algorithms, which convert transaction data into a unique digital signature. These signatures are used to verify the integrity of each transaction.
+
+Conclusion: Account balances are an essential aspect of the Bitcoin system, which is maintained by its blockchain technology. By using a decentralized and secure ledger, the Bitcoin system ensures that account balances are accurate and transparent. The use of transaction fees and security measures also helps to prevent fraud and protect user funds.
+
+
+
+## AI modified
+
+Title: Managing Account Balances in the Bitcoin System
+
+Abstract: This article aims to explain how account balances are managed on the Bitcoin system's blockchain, which is a decentralized and secure ledger for transactions.
+
+Introduction: The Bitcoin system's decentralized ledger does not explicitly record all account balances. If you want to know an account's balance in the Bitcoin system, you must calculate it by examining the account's transaction history. The blockchain records two types of transactions - coin-based and transfer-based. Each transaction provides information about where the transferred Bitcoins were sent and where they came from. By examining all the transactions that involve the account, you can determine its balance. This is why the Bitcoin system is also known as a transfer-based ledger.
+
+Managing Account Balances in Bitcoin: Full nodes maintain a data structure called the Unspent Transaction Output (UTXO) in their memory, which records the transaction details and position of unspent transactions. This information helps nodes locate an account's balance quickly and also prevents double-spending. Transactions usually have multiple inputs and outputs, and the difference between the input and output values is considered the transaction fee. This fee is paid to miners, who validate the transactions and add them to the blockchain. Every transaction might consume a UTXO element and generate several new UTXO elements, so the memory occupied by the UTXO in a full node is increasing gradually.
+
+Bitcoin wallets manage user accounts by tracking their transaction history and calculating their current balance. The wallets keep track of private keys used to sign transactions.
+
+Security Measures: The Bitcoin system uses several security measures to prevent fraud and protect user funds. Public and private keys protect user accounts, ensuring that only the account owner can approve transactions. Hashing algorithms convert transaction data into unique digital signatures, which verify the integrity of each transaction.
+
+Conclusion: Account balances are an essential aspect of the Bitcoin system, which uses a decentralized and secure ledger. The UTXO data structure and transaction fees help to determine the account balances, while private and public keys and hashing algorithms protect user accounts. These measures ensure accurate and transparent account balances and prevent fraud while adding to the overall security of the Bitcoin system.
+
 ## Reference
 
 - Bitcoin and Cryptocurrency Technologies A Comprehensive Introduction [Arvind Narayanan, Joseph Bonneau, Edward Felten, Andrew Miller, Steven Goldfeder]
