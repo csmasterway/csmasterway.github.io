@@ -13,7 +13,7 @@ keywords: Operating system
 + .text：代码段
 + .rodata：只读的数据 静态内存分配
 + .data：可修改的全局变量 静态内存分配
-+ .bss：未初始化的全局变量 block started by symbol 静态内存分配
++ .bss：未初始化的全局变量或者初始化为0的全局变量 block started by symbol 静态内存分配
 
 > data是已经初始化的数据，所以是要在二进制文件中占用空间的，而bss段因为都是未初始化的数据所以加载的时候由内核或者加载器将其初始化为0，本身在二进制文件中并不占用空间
 
