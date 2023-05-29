@@ -13,7 +13,7 @@ keywords: Operating system
 1. ROM stage：计算机上电后CPU的PC寄存器的值被设置为ROM的物理地址，并且运行ROM内的软件（一般叫做固件 firmware），对CPU进行一些初始化工作，将后续需要的bootloader的代码和数据加载到物理内存中，这一阶段直接在ROM中运行。
 2. RAM stage：检测并初始化CPU、以及主板等，这一阶段在RAM上运行。
 3. BootLoader stage：在内存中找到bootloader并执行bootloader的指令，完成对CPU的一些初始化工作，将操作系统镜像从硬盘加载到物理内存中，随后跳转将计算机的控制权转交给操作系统。这一阶段计算机的控制权属于bootloader
-4. OS stage：这一截断由操作系统控制计算机。
+4. OS stage：这一阶段由操作系统控制计算机。
 
 综上计算机的一次完整的启动过程伴随着计算机控制权的转移
 
