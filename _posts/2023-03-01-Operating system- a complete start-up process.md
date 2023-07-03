@@ -8,11 +8,31 @@ keywords: Operating system
 
 ## 一次完整的计算机上电启动过程
 
-### 真实计算机
+## Linux/Windows
+
+1. 计算机上电激活CPU，激活的CPU读取ROM中的boot程序，将指令寄存器设置为BIOS的第一条指令，开始执行BIOS的指令。在计算机刚上电时候，系统RAM处于未知状态，用ROM不需要进行初始化并且不受到计算机病毒的影响，因此这一阶段在ROM中执行是很方便的。（ROM段）
+
+2. 硬件自检。BIOS程序会从ROM中读取指令并将其加载到计算机的RAM（Random Access Memory）中执行诊断各设备的状态，另外还包括初始化CPU寄存器、设备控制器以及内存内容。（RAM段）
+
+3. 加载带有操作系统的硬盘，从引导设备列表中选择第一个设备（例如硬盘、USB驱动器或CD-ROM），并尝试从该设备的第一个扇区（称为“引导扇区”）加载引导程序到RAM中。（RAM段）
+
+4. 加载主引导记录MBR。对于Linux系统，引导扇区通常包含一个名为GRUB的引导加载程序，GRUB会读取其配置文件，以确定要加载的操作系统内核，而对于windows是Windows Boot Manager（Bootmgr）（Bootloader段）
+
+   <font color ='red'>windows默认写MBR，对于双系统应先安装windows再安装linux</font>
+
+5. 扫描磁盘分区表，识别含有操作系统的硬盘分区，也叫作活动分区，并加载活动分区，将控制权交给活动分区。（Bootloader段）
+
+6. 加载分区引导记录PBR，读取活动分区的第一个扇区（分区引导记录PBR），寻找并激活活动分区根目录下用于引导操作系统的程序（启动管理器），并加载启动管理器。（Bootloader段）
+
+7. 加载OS。(OS段)
+
+## Windows
+
+### 计算机启动的四个阶段
 
 1. ROM stage：计算机上电后CPU的PC寄存器的值被设置为ROM的物理地址，并且运行ROM内的软件（一般叫做固件 firmware），对CPU进行一些初始化工作，将后续需要的bootloader的代码和数据加载到物理内存中，这一阶段直接在ROM中运行。
 2. RAM stage：检测并初始化CPU、以及主板等，这一阶段在RAM上运行。
-3. BootLoader stage：在内存中找到bootloader并执行bootloader的指令，完成对CPU的一些初始化工作，将操作系统镜像从硬盘加载到物理内存中，随后跳转将计算机的控制权转交给操作系统。这一阶段计算机的控制权属于bootloader
+3. BootLoader stage：在内存中找到bootloader并执行bootloader的指令，完成对CPU的一些初始化工作，将操作系统镜像从硬盘加载到物理内存中，随后跳转将计算机的控制权转交给操作系统。这一阶段计算机的控制权属于bootloader（bootloader可以看做集成了BIOS和GRUB的功能）
 4. OS stage：这一阶段由操作系统控制计算机。
 
 综上计算机的一次完整的启动过程伴随着计算机控制权的转移
